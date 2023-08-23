@@ -1,0 +1,12 @@
+.nav-bar{
+    position: fixed;
+    box-shadow: 0 4px 5px #e5e5e5;
+    width: 100%;
+    z-index: 11;
+    top: 0;
+    left: 0;
+}
+
+@media (max-width: 991px) {
+    
+}

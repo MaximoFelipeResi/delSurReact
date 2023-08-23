@@ -1,0 +1,93 @@
+.title-featuredprop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin: 50px 0;
+}
+
+.featured-properties {
+    margin: 50px 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+article.card {
+    margin: 25px 25px;
+    max-width: 350px;
+    background: #f8f8f8;
+    border-radius: 8;
+    box-shadow: 0 0 12px #d7d7d7;
+}
+
+.header-card {
+    margin: 20px 0;
+}
+
+.header-card img {
+    border-radius: 8px 8px 0 0;
+} 
+
+.category-card {
+    margin: 25px 0;
+}
+
+.category-card span{
+    background-color: #25c4d8;   
+    color: #fff;
+    padding: .2rem .5rem; 
+    border-radius: 4px;
+}
+
+.text-card {
+    margin: 20px  0;
+}
+
+.card .footer-card {
+    padding: 0 1rem;
+} 
+
+.btn-watchmore {
+    margin: 10px;
+    background: black;
+    cursor: pointer;
+    border: none;
+    padding: 8px 16px;
+    color: azure;
+    font-size: 16px;
+    font-weight: bold;    
+    position: relative;
+    border-radius: 12px;
+}
+
+.button-container {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.btn-wsp {
+    cursor: pointer;
+    height: 70px;
+    width: 70px; 
+}
+
+.swiper {
+    max-width: 300px;
+    max-height: 300px;
+    position: absolute;
+  }
+  
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+  }
+  

@@ -1,0 +1,87 @@
+.add-form {
+    margin-top: 100px;
+}
+
+h2 {
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.addform-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 250px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #b3adad;
+    background: linear-gradient(
+        50deg,
+        rgb(229, 58, 19) 0%,
+        rgb(199, 0, 57) 50%,
+        rgb(144, 12, 63) 100%
+    );
+}
+
+.form__group {
+    max-width: 400px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 20px;
+    padding: 10px 80px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-input {
+    padding: 10px 20px;
+    background-color: none;
+    border: 0;
+    outline: none;
+    border-radius: 20px;
+    color: #f2f2f2;
+    font-size: 16px;
+}
+
+.addfile-input {
+    color: #fff;
+}
+
+.add-label, h4 {
+    color: #fff;
+}
+
+.form__group, select, option {
+    display: flex;
+    align-items: center;
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+select {
+    padding: 5px 5px;
+    border-radius: 5px;
+}
+
+.form__group .add-input:focus{
+    border: 2px solid black;
+    outline: none;
+}
+
+.add-btn {
+    margin: 20px;
+    background: black;
+    cursor: pointer;
+    border: none;
+    padding: 16px 32px;
+    color: azure;
+    font-size: 16px;
+    font-weight: bold;    
+    position: relative;
+    border-radius: 12px;
+}
