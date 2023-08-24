@@ -1,100 +1,51 @@
-import React from 'react'
-import { Link } from "react-router-dom";
-import { Flex, Box, Spacer, Container, Menu, MenuButton,MenuList, MenuItem, Button, Avatar } from "@chakra-ui/react";
+import React, { Component } from 'react'
 
 import "../Header/header.css"
 
-const Header = () => {
-  
+class Header extends Component {
+
+  state = {clicked: false};
+  handleClick = () => {
+    this.setState({clicked: !this.state.clicked});
+  }
+
+  render() {
   return (
     <>
-      <Container className="nav-bar" maxW="150rem" bg="white" color="#262626">
-        <Flex alignItems="center" gap="2">
-        <Link to={"/"}>
-          <Avatar
-            size="x2"
-            src="../src/assets/images/logo.png"
-          />
-          </Link>
-          <Spacer />
-          <Box>
+      <nav className='nav-bar'>
+        <a href="/">
+          <img className='logo' src="../src/assets/images/logo.jpg" alt="Logo"/>
+        </a>
 
-          <Menu>
-              <Link to={"/"}>
-                <MenuButton
-                  as={Button}
-                  size="lg"
-                  variant="ghost"
-                  colorScheme="black"
-                  m="5"
-                >
-                  Inicio
-                </MenuButton>
-              </Link>
-            </Menu>
+        <div>
+          <ul id='navlist' className={this.state.clicked ? '#navlist active' : '#navlist'}>
+            <li>
+              <a className='active' href="/">Inicio</a>
+            </li>
+            <li>
+              <a href="propiedades">Propiedades</a>
+            </li>
+            <li>
+              <a href="tasaciones">Tasaciones</a>
+            </li>
+            <li>
+              <a href="nosotros">Nosotros</a>
+            </li>
+            <li>
+              <a href="contacto">Contacto</a>
+            </li>
+          </ul>
+        </div>
 
-          <Menu>
-              <Link to={"propiedades"}>
-                <MenuButton
-                  as={Button}
-                  size="lg"
-                  variant="ghost"
-                  colorScheme="black"
-                  m="5"
-                >
-                  Propiedades
-                </MenuButton>
-              </Link>
-            </Menu>
-
-            <Menu>
-              <Link to={"tasaciones"}>
-                <MenuButton
-                  as={Button}
-                  size="lg"
-                  variant="ghost"
-                  colorScheme="black"
-                  m="5"
-                >
-                  Tasaciones
-                </MenuButton>
-              </Link>
-            </Menu>
-
-            <Menu>
-              <Link to={"nosotros"}>
-                <MenuButton
-                  as={Button}
-                  size="lg"
-                  variant="ghost"
-                  colorScheme="black"
-                  m="5"
-                >
-                  Nosotros
-                </MenuButton>
-              </Link>
-            </Menu>
-
-            <Menu>
-              <Link to={"contacto"}>
-                <MenuButton
-                  as={Button}
-                  size="lg"
-                  variant="ghost"
-                  colorScheme="black"
-                  m="5"
-                >
-                  Contacto
-                </MenuButton>
-              </Link>
-            </Menu>
-            
-          </Box>
-          <Spacer />
-        </Flex>
-      </Container>
+        <div id='mobile' onClick={this.handleClick}>
+          <i id='bar' className={this.state.clicked 
+          ? 'fas fa-times' : 'fas fa-bars'}>
+          </i>
+        </div>
+      </nav>
     </>
   )
+}
 }
 
 export default Header;
