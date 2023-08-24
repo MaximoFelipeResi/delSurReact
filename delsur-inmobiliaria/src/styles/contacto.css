@@ -143,13 +143,20 @@ textarea {
     font-size: 18px;
 }
 
-@media(max-width:991px) {
+@media only screen and (max-width:991px) {
     
     body {
         padding: 30px;
     }
 
+    .form-container{
+        margin: 50px;
+        padding-top: 25px;
+    }
+
     .contact-form {
+        margin: 0px;
+        padding: 40px;
         width: 100%;
     }
 

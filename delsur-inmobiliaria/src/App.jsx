@@ -3,8 +3,9 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 
 import Inicio from "./pages/Inicio";
-import Nosotros from "./pages/Nosotros"
 import Propiedades from "./pages/Propiedades";
+import Tasaciones from "./pages/Tasaciones";
+import Nosotros from "./pages/Nosotros"
 import Contacto from "./pages/Contacto";
 
 import AdminLogin from "./admin/AdminLogin";
@@ -22,18 +23,20 @@ function App() {
       <Header />
       <Routes>
         <Route exact path="/" element={<Inicio/>} />
-        <Route exact path="nosotros" element={<Nosotros/>} />
         <Route exact path="propiedades" element={<Propiedades/>}/>
+        <Route exact path="tasaciones" element={<Tasaciones/>}/>
+        <Route exact path="nosotros" element={<Nosotros/>} />
         <Route exact path="contacto" element={<Contacto/>} />
 
 
-        <Route path="/login" element={<AdminLogin/>}/>
-        <Route path="/admin-nav" element={<AdminNav/>}/>
+        <Route exact path="login" element={<AdminLogin/>}/>
         <Route exact path="addproperties" element={<AddProperties/>}/>
+        <Route exact path="queries" element={<Queries/>}/>
+        <Route exact path="appraisals" element={<Appraisals/>}/>
       </Routes>
       <Footer />
     </BrowserRouter>
   )
 }
 
-export default App
+export default App;

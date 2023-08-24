@@ -1,12 +1,6 @@
 import React from 'react'
-import { useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import { connect } from 'react-redux';
-import {store, setAuth} from '../redux/store/store';
-import "./adminlogin.css"
 
-const endpoint =  'http://localhost:8000/apiDelSur';
+import "./adminlogin.css"
 
 const AdminLogin = () => {
   const navigate = useNavigate();
