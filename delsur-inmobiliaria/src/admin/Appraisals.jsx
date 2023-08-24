@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Appraisals = () => {
+const Appraisals = () => {   // tasaciones
   return (
     <div>Appraisals</div>
   )

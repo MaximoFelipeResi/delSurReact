@@ -2,7 +2,7 @@ import React from 'react'
 
 const Queries = () => {
   return (
-    <div>Queries</div>
+    <div>Queries</div>    // consultas   de contactos
   )
 }
 

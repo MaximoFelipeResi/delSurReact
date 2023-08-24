@@ -27,7 +27,8 @@ function App() {
         <Route exact path="contacto" element={<Contacto/>} />
 
 
-        <Route exact path="login" element={<AdminLogin/>}/>
+        <Route path="/login" element={<AdminLogin/>}/>
+        <Route path="/admin-nav" element={<AdminNav/>}/>
         <Route exact path="addproperties" element={<AddProperties/>}/>
       </Routes>
       <Footer />
