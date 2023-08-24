@@ -1,8 +1,19 @@
 import React from 'react'
 
 const AdminNav = () => {
+  
   return (
-    <div>AdminNav</div>
+    <div>
+      <nav>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </nav>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex officia laboriosam, minus laudantium soluta ut? Maxime laborum eos pariatur ullam accusamus? Quisquam cupiditate totam, ipsum perferendis in accusamus alias reiciendis mollitia unde, id eos non natus illo necessitatibus animi hic tenetur veritatis. Voluptatem numquam distinctio, fugit accusantium iusto animi rem ipsa tempora itaque quaerat minima. Quisquam odio odit eos, expedita modi eum debitis officia magnam quis saepe vel illo sint maiores perspiciatis repellat voluptatem accusantium ex tenetur corrupti fugit reiciendis, iure quibusdam autem. Magnam molestiae odit id culpa laudantium animi aspernatur sint possimus eligendi ipsam exercitationem totam repellat quod ab nihil magni, repellendus quasi. Magnam, ab quas soluta mollitia, nostrum esse a saepe est, ratione vitae quod omnis ullam. Nihil eius mollitia aperiam non ut itaque, autem saepe aliquid. Repellendus, sint repudiandae? A nam aspernatur quis ratione odit! Quam tempore a error, fuga in dicta ad! Omnis doloribus explicabo quibusdam doloremque. Numquam praesentium placeat atque quam tenetur qui. Architecto magnam eum nam modi, porro, ut et illo quod, facere alias cum dicta reiciendis eius eos deserunt ducimus? Impedit aliquid amet eum cum quia in dolor saepe. Doloremque eius ipsa suscipit molestiae pariatur quod accusantium reiciendis necessitatibus porro magnam maxime accusamus architecto tenetur impedit modi consequuntur adipisci explicabo, id eaque voluptate. Incidunt repellat accusantium quasi quod, consequuntur sed nobis tempore minus excepturi vero iure labore quam officiis porro cum praesentium ipsum! Officiis laborum labore minima nisi sed est quae alias, tenetur facere error sint veritatis unde tempora ipsa assumenda reprehenderit laudantium, quisquam, dolores debitis veniam animi ab doloribus deleniti sapiente. Aliquam vitae sint officiis hic id iste quibusdam facilis dicta adipisci, saepe dolorum expedita inventore, natus corporis. Unde, suscipit fugit officia laboriosam quos ipsa voluptatibus nobis nesciunt amet ducimus mollitia possimus fuga officiis quibusdam accusamus debitis voluptatum culpa. Assumenda consectetur facere possimus? Voluptatem optio eveniet modi quas mollitia ut! Cumque cum vel ea ratione soluta suscipit, perferendis animi quae recusandae saepe nihil optio dolores officia, ducimus provident quod dicta odio qui nulla aut libero totam nobis magni. Qui, aperiam! Ex, alias dolor commodi in accusamus provident inventore rerum velit necessitatibus, delectus asperiores esse laboriosam nihil! Voluptatibus, provident repellendus exercitationem quos similique necessitatibus facere praesentium culpa sit illo deleniti voluptate. Ut animi delectus harum minima expedita quam ex iure, porro odit assumenda laboriosam sed quia repellat quibusdam qui dolorum saepe explicabo quos voluptate. Quod pariatur consectetur aspernatur nisi. Ad ipsam quas optio quam, dolore nesciunt cupiditate cumque voluptates, voluptate necessitatibus aut dolor minus provident libero praesentium atque? Quos esse sapiente aliquam eos quas laboriosam! Rerum magnam facere, alias, quo, quasi eius perferendis officiis iste architecto maiores quae eveniet delectus perspiciatis corporis assumenda officia. Quidem veniam deserunt cupiditate voluptas magnam. Ut veniam dolorem, commodi excepturi doloremque quas, blanditiis hic nostrum maiores consequuntur quod vitae modi. In aspernatur, vero alias repudiandae ipsum odio earum iusto molestiae a quam omnis, facere dolorum consectetur consequuntur beatae. Nihil, temporibus corporis facilis vitae quae eum est libero dignissimos repellat recusandae inventore quia at ab eius incidunt atque suscipit!</p>
+    </div>
   )
 }
 

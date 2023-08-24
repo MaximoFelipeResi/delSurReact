@@ -33,31 +33,19 @@ const Propiedades = () => {
 
               <div className="search__box">
                 <input type="text" placeholder='Search...'/>
-                    <span>
-                        <i class="ri-search-line"></i>
-                    </span>
-                </div>
+                  <span>
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                  </span>
+              </div>
             </section>
 
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
+            <div className='published container'>
+              <div className='rectangle-card'>
+
+              </div>
+            </div>
+
+              
 
             <div className='button-container'>
               <Link to="https://api.whatsapp.com/send?phone=541151822809&text=&source=&data=&app_absent=" target='blank'>

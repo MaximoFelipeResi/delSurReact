@@ -1,5 +1,5 @@
 .add-form {
-    margin-top: 100px;
+    margin-top: 140px;
 }
 
 h2 {
@@ -43,7 +43,7 @@ h2 {
     border: 0;
     outline: none;
     border-radius: 20px;
-    color: #f2f2f2;
+    color: black;
     font-size: 16px;
 }
 
@@ -64,12 +64,13 @@ h2 {
 }
 
 select {
+    color: black;
     padding: 5px 5px;
     border-radius: 5px;
 }
 
 .form__group .add-input:focus{
-    border: 2px solid black;
+    border: 1px solid black;
     outline: none;
 }
 

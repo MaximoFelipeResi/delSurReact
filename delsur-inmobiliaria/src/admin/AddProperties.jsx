@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from '../components/Helmet/Helmet'
 
-import "./addproperties.css"
+import "./admin-css/addproperties.css"
 
 const AddProperties = () => {
   return (
