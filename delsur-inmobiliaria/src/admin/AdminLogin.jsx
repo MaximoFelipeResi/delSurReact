@@ -1,16 +1,26 @@
 import React from 'react'
+import {EventTarget ,useState, useEffect} from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { connect } from 'react-redux';
+import {store, setAuth} from '../redux/store/store';
 
-import "./adminlogin.css"
+import './admin-css/adminlogin.css'
 
 const AdminLogin = () => {
   const navigate = useNavigate();
+  const endpoint = store.getState().api;
 
+
+  if(store.getState().user) {
+    location.href = "/";
+  }
 
     const [email, setEmail] = useState([]);
     const [password, setPassword] = useState([]);
 
     const login = async () => {
-      await axios.post(`${endpoint}/login`, {                   // LUCAS
+      await axios.post(`${store.getState().api}/login`, {                   // LUCAS
           email: email,
           password: password
       }).then((response) => {
@@ -23,6 +33,7 @@ const AdminLogin = () => {
           // Recepcion del token
           // Guardar token en store global
 
+          
           alert("Inicio de sesion correcto");
 
           store.dispatch(setAuth({
@@ -30,7 +41,8 @@ const AdminLogin = () => {
               authorisation: response.data.authorisation
           }));
 
-          navigate('/admin-nav');
+          //navigate('/admin-nav');
+          location.href = "/";
       });
   }
 
@@ -73,9 +85,9 @@ const AdminLogin = () => {
               <input className='input-login' type="checkbox" /> Remember Me</label>
             </div>
 
-            <button className='login-btn' onClick={()=>{
+            <a href='javascript:void(0)' className='login-btn' onClick={()=>{
               login();
-            }}>Log in</button>
+            }}>Log in</a>
 
           </form>
 

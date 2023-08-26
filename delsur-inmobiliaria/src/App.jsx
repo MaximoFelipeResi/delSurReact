@@ -14,13 +14,22 @@ import AddProperties from "./admin/AddProperties";
 import Queries from "./admin/Queries";
 import Appraisals from "./admin/Appraisals";
 
+import {store} from './redux/store/store';
 
 
 function App() {
   
+  const header = () => {
+    if(store.getState().user) {
+      return (<AdminNav></AdminNav>)
+    }
+    return (<Header></Header>)
+  }
+
+
   return (
     <BrowserRouter>
-      <Header />
+      {header()}
       <Routes>
         <Route exact path="/" element={<Inicio/>} />
         <Route exact path="propiedades" element={<Propiedades/>}/>
@@ -29,10 +38,10 @@ function App() {
         <Route exact path="contacto" element={<Contacto/>} />
 
 
-        <Route exact path="login" element={<AdminLogin/>}/>
-        <Route exact path="addproperties" element={<AddProperties/>}/>
-        <Route exact path="queries" element={<Queries/>}/>
-        <Route exact path="appraisals" element={<Appraisals/>}/>
+        <Route exact path="/login" element={<AdminLogin/>}/>
+        <Route exact path="/admin/addproperties" element={<AddProperties/>}/>
+        <Route exact path="/admin/queries" element={<Queries/>}/> {/*consultasGente */}
+        <Route exact path="/admin/appraisals" element={<Appraisals/>}/> {/*consultastasaciones */}
       </Routes>
       <Footer />
     </BrowserRouter>

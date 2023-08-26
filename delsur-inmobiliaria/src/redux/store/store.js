@@ -14,7 +14,7 @@ const authSlice = createSlice({
   initialState: {
     user: null,
     token: null,
-    api: 'http://localhost:8000/apiDelSur'
+    api: 'http://localhost:8000/api'
   },
   reducers: {
     /*incremented: state => {

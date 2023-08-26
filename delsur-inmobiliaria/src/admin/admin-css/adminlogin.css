@@ -12,7 +12,7 @@
     min-height: 100vh;
     align-items: center;
     width: 100%;
-    background: url(../assets/images/cafefondo1.jpg) no-repeat;
+    background: url(../src/assets/images/cafefondo1.jpg) no-repeat;
     background-position: center;
     background-size: cover;
 }
@@ -96,14 +96,21 @@ h2 {
 }
 
 .login-btn {
+    display: block;
     margin: 10px 0;
     width: 100%;
     height: 40px;
     border-radius: 40px;
-    background: #fff;
     border: none;
     outline: none;
     cursor: pointer;
     font-size: 1em;
     font-weight: 600;
+    background: #fff;
+
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }

@@ -1,12 +1,38 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import {store} from '../redux/store/store'
 
 import Helmet from '../components/Helmet/Helmet.jsx';
 import CommonSection from '../components/UI/CommonSection'
-
 import "../styles/contacto.css";
 
+
+
 const Contacto = () => {
+
+  
+  const endpoint = store.getState().api;
+  const [nombre, setNombre] = useState('');
+  const [numero, setNumero] = useState('');
+  const [email, setEmail] = useState('');
+  const [descripcion, setDescripcion] = useState('');
+  const navigate = useNavigate();
+
+  const Store = async(event)=>{
+    event.preventDefault();
+    await  axios.post(endpoint + "/Listaqueries",
+      {fullname:nombre, number:numero, email:email, descripcion:descripcion});
+      navigate('/');
+  }
+
+
+
+
+
+
   return (
     <div>
       <Helmet title='Contacto'>
@@ -21,29 +47,41 @@ const Contacto = () => {
           02229 491725
         </p>
 
-        <form method='post' autoComplete='off' className='contact-form'>
+        <form onSubmit={Store} method='post' autoComplete='off' className='contact-form'>
 
           <div className='form-group'>
 
             <div className='form-content'>
               <label className='contact-label' for="name">Nombre</label>
-              <input className='contact-input' type="text" id='name' name='name' placeholder='Nombre' required/>
+              <input className='contact-input'
+              value={nombre}
+              onChange={(e)=>setNombre(e.target.value)}
+              type="text" id='name' name='name' placeholder='Nombre' required/>
             </div>
 
             <div className='form-content'>
               <label className='contact-label' for="email">Correo</label>
-              <input className='contact-input' contact-label type="email" id='email' name='email' placeholder='Correo' required/>
+              <input className='contact-input'
+              value={email}
+              onChange={(e)=>setEmail(e.target.value)}
+              contact-label type="email" id='email' name='email' placeholder='Correo' required/>
             </div>
 
             <div className='form-content'>
               <label className='contact-label'for="phone">Telefono</label>
-              <input className='contact-input' type="tel" id='phone' name='phone' placeholder='Telefono' required/>
+              <input className='contact-input'
+              value={numero}
+              onChange={(e)=>setNumero(e.target.value)}
+              type="text" id='phone' name='phone' placeholder='Telefono' required/>
             </div>
             
           </div>
 
           <label className='contact-label' for='message'>Consulta</label>
-          <textarea name="message" id="message" cols="30" rows="10" placeholder='Consulta...' required></textarea>
+          <textarea name="message"
+          value={descripcion}
+          onChange={(e)=>setDescripcion(e.target.value)}
+          id="message" cols="30" rows="10" placeholder='Consulta...' required></textarea>
 
           <button type='submit' className='button-contact'>Enviar Mensaje</button>
 
