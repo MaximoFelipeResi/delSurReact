@@ -31,9 +31,9 @@
 
 }
 
-h2 {
+.h2-login {
     font-size: 2em;
-    color: #fff;
+    color: #fff !important;
     text-align: center;
 }
 

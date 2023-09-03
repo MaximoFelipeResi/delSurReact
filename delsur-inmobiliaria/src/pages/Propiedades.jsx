@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Container, Row, Col } from "reactstrap";
 
 import Helmet from '../components/Helmet/Helmet'
+import ItemList from '../components/Body/ItemList'
 import CommonSection from '../components/UI/CommonSection'
 
 import "../styles/propiedades.css"
@@ -38,6 +39,8 @@ const Propiedades = () => {
                   </span>
               </div>
             </section>
+
+              <ItemList/>
 
             <div className='published container'>
               <div className='rectangle-card'>

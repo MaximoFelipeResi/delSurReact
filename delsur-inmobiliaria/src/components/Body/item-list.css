@@ -1,0 +1,138 @@
+.properties-container {
+    width: 80%;
+    margin: 2rem auto;
+}
+
+.rectangle-card {
+    display: flex;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.28);
+}
+
+.rectangle-img {
+    height: auto;
+    overflow: hidden;
+    
+}
+
+.rectangle-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.rectangle-content {
+    padding: 2rem;
+}
+
+.rectangle-details,
+.icon-text {
+    display: flex;
+    align-items: center;
+}
+
+.icon-text {
+    margin-right: 2rem;
+}
+
+.icon-text .icon {
+    color: #0a1d37;
+    margin-right: 0.4rem;
+}
+
+.rectangle-title {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.rectangle-state {
+    margin: 25px 10px;
+    background-color: #25c4d8;   
+    color: #fff;
+    padding: .2rem .5rem;
+    border-radius: 4px;
+}
+
+.rectangle-main {
+    font-weight: bold;
+    margin: 1.4rem 5rem 1.4rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button {
+    margin: 1rem 0;
+    padding: 1.2rem 3rem;
+    display: inline-block;
+    background-color: #123456;
+    color: #fff;
+    border-radius: 0.6rem;
+}
+
+
+@media only screen and (max-width: 1080px) {
+    .rectangle-content {
+        padding: 1.4rem;
+        font-size: normal;
+    }
+
+    .rectangle-state {
+        padding: .5rem .5rem;
+    }
+
+    .icon-text {
+        margin-right: 1rem;
+    }
+
+    .icon-text .icon {
+        margin-right: 0.6rem;
+    }
+}
+
+@media only screen and (max-width: 900px ) {
+    .rectangle-card {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .rectangle-img {
+        height: auto;
+        flex: 1;
+    }
+
+    .rectangle-content {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: small;
+        padding: 1.2rem;
+    }
+
+    .icon-text {
+        margin-right: .9rem;
+    }
+
+    .icon-text .icon {
+        margin-right: 0.3rem;
+    }
+
+    .rectangle-state {
+        margin: 37px 10px 37px 0;
+        padding: .2rem .5rem;
+        border-radius: 4px;
+    }
+
+    .rectangle-main {
+        font-weight: bold;
+        margin: 1rem 1rem 1rem 0;
+        display: flex;
+        justify-content: none;
+        align-items: center;
+    }
+}

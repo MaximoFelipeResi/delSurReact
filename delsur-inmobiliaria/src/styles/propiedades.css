@@ -16,8 +16,8 @@ section {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     background: linear-gradient(
         90deg,
-        rgba(67, 151, 239, 1) 0,
-        rgba(2, 227, 211, 1) 100%
+        #fff,
+        #fff 100%
   );
     color: linear-gradient(
         90deg,

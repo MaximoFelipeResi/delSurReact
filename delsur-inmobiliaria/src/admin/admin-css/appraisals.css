@@ -1,5 +1,5 @@
 .thead-appraisals {
-    background-color: rgb(2, 2, 142) !important;
+    background: #0a1d37 !important;
 }
 
 .appraisals-btn {
@@ -8,5 +8,5 @@
     border-radius: 25px;
     border: 1px solid #dee2e685;
     opacity: 1;
-    background-color: rgb(2, 2, 142) !important;
+    background-color:#0a1d37 !important;
 }

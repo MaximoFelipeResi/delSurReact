@@ -6,7 +6,7 @@
     min-height: 100vh;
     align-items: center;
     width: 100%;
-    background: url(../src/assets/images/fondotasaciones3.jpg) no-repeat;
+    background: #0a1d37;
     background-position: center;
     background-size: cover;  
 }

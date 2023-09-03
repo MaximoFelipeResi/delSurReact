@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import {store, setAuth} from '../redux/store/store'
+import {checkUser} from '../utils/user';
 
 
 import "./admin-css/queries.css"
@@ -30,17 +31,10 @@ const Queries = (props) => {
 
   }
 
-  const checkUser = () => {
-
-    console.log(store.getState());
-    if(!store.getState().user) {
-        navigate("/");
-    }
-}
-  
-
-  return (
-    <div className='table-container'>
+    const check = () => {
+      if(checkUser()) {
+        return (
+          <div className='table-container'>
       <h2 className='heading'>Tabla de Consultas</h2>
       <table className="table">
         <thead>
@@ -74,7 +68,15 @@ const Queries = (props) => {
         </tbody>
       </table>
     </div>
-  )
+        );
+      }
+      else {
+        location.href = "/";
+    }   
+}
+  
+
+  return check();
 }
 
 export default Queries

@@ -78,7 +78,7 @@ const Contacto = () => {
           </div>
 
           <label className='contact-label' for='message'>Consulta</label>
-          <textarea name="message"
+          <textarea name="message" className='contacto-textarea'
           value={descripcion}
           onChange={(e)=>setDescripcion(e.target.value)}
           id="message" cols="30" rows="10" placeholder='Consulta...' required></textarea>

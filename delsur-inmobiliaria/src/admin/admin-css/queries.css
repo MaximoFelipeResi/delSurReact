@@ -19,7 +19,7 @@
 }
 
 .table thead {
-    background-color: rgb(199, 0, 57);
+    background: #0a1d37;
 }
 
 .table thead tr th {
@@ -47,7 +47,7 @@
 .table tbody tr td .queries-btn {
     width: 130px;
     line-height: 35px;
-    background-color: rgb(199, 0, 57);
+    background-color: #0a1d37;
     border-radius: 25px;
     border: 1px solid #dee2e685;
     opacity: 1;

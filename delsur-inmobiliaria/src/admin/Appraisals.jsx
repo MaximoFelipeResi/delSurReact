@@ -7,7 +7,7 @@ import { store, setAuth } from '../redux/store/store';
 import {checkUser} from '../utils/user';
 
 import "./admin-css/appraisals.css";
-const endpoint = store.getState().api // == store.getState().api            CREO
+const endpoint = store.getState().api; // == store.getState().api            CREO
 const Appraisals = (props) => {
   const navigate = useNavigate();
 
@@ -19,12 +19,12 @@ const Appraisals = (props) => {
   },[])
 
   const getAllTasaciones=async()=>{
-    const responder =await axios.get(`${endpoint}/addproperties`);
+    const responder =await axios.get(`${endpoint}/addtasaciones`);
     setTasaciones(responder.data);
 
   }
   const deleteTasaciones=async(id)=>{
-    await axios.delete(`${endpoint}/addproperties/${id}`);
+    await axios.delete(`${endpoint}/addtasacion/${id}`);
     getAllTasaciones();  //actualizamos estado
 
   }
@@ -64,7 +64,7 @@ const Appraisals = (props) => {
         </thead>
         <tbody>
           {tasaciones.map((consulta)=>(
-            <tr>
+            <tr key={consulta.id}>
             <td datatype="Id">{consulta.id}</td>
             <td datatype="Name">{consulta.name}</td>
             <td datatype="Email">{consulta.email}</td>

@@ -13,11 +13,11 @@ import { useNavigate } from 'react-router-dom';
 const admin__nav = [
     {
         display:'Add Properties',
-        path:'add-properties',
+        path:'addproperties',
     },
     {
       display:'All Properties',
-      path:'all-properties'
+      path:'allproperties'
     },
     {
         display:'Queries',
@@ -81,9 +81,12 @@ const AdminNav = () => {
                             <li>
                               <a href="contacto">Contacto</a>
                             </li>
-                            <a className='logout-btn'  onClick={logout}>
+                            <li>
+                            <a className='logout-btn' onClick={logout}  >
                               Logout
                             </a>
+                            </li>
+                           
                             
                           </ul>
                         </div>

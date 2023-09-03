@@ -14,7 +14,11 @@ const authSlice = createSlice({
   initialState: {
     user: null,
     token: null,
-    api: 'http://localhost:8000/api'
+    api: 'http://localhost:8000/api',
+    apiFile : 'http://localhost:8000/archivos',
+    apiArchivos : 'http://localhost:8000/archivos',
+    login_time: 0,
+    casa: null,
   },
   reducers: {
     /*incremented: state => {
@@ -23,6 +27,14 @@ const authSlice = createSlice({
     setAuth(state, value) {
         state.token = value.payload.authorisation;
         state.user = value.payload.user;
+    },
+
+    setLoginTime(state, value){
+      state.login_time = value.payload;
+    },
+
+    setCasa(state, value) {
+      state.casa = value.payload;
     }
   }
 })
@@ -30,7 +42,7 @@ const authSlice = createSlice({
 
 const persistedReducer = persistReducer(persistConfig, authSlice.reducer)
 
-export const { setAuth } = authSlice.actions
+export const { setAuth, setLoginTime, setCasa } = authSlice.actions
 export const store = configureStore({
     reducer: persistedReducer,
     devTools: process.env.NODE_ENV !== 'production',

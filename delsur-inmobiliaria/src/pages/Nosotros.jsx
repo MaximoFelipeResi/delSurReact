@@ -11,7 +11,7 @@ const Nosotros = () => {
   return (
     <div>
       <Helmet title="Nosotros">
-        
+
         <section id='split-screen'>
 
           <div className="left">
@@ -21,17 +21,22 @@ const Nosotros = () => {
               </span> <br />
               Propiedades e Inmuebles
             </h2>
-            <p className='nosotros-info'>Nuestra misión es brindar un servicio profesional y responsable de     intermediación en la compra, venta y alquiler de inmuebles, buscando satisfacer al cliente atendiendo, comprendiendo y trabajando sobre sus necesidades inmobiliarias específicas, y aportando valor a los inversores en bienes raíces.
-            <br /><br />
-            Nuestra misión es brindar un servicio profesional y responsable de     intermediación en la compra, venta y alquiler de inmuebles, buscando satisfacer al cliente atendiendo, comprendiendo y trabajando sobre sus necesidades inmobiliarias específicas, y aportando valor a los inversores en bienes raíces.
-            <br /> <br />
-            Nuestros valores son: <br />  
+            <p className='nosotros-info'>
+            <div className="objetivo">
+              Nuestra misión es brindar un servicio profesional y responsable de intermediación en la compra, venta y alquiler de inmuebles, buscando satisfacer al cliente atendiendo, comprendiendo y trabajando sobre sus necesidades inmobiliarias específicas, y aportando valor a los inversores en bienes raíces.
+            </div>
+            <div className="mision">
+              Nuestra misión es brindar un servicio profesional y responsable de intermediación en la compra, venta y alquiler de inmuebles, buscando satisfacer al cliente atendiendo, comprendiendo y trabajando sobre sus necesidades inmobiliarias específicas, y aportando valor a los inversores en  bienes raíces.
+            </div>
+            <div className="valores">
+            Nuestros valores son: <br />
             • Compromiso <br />
             • Integridad <br />
             • Profesionalismo
+            </div>
             </p>
           </div>
-            
+
           <div className="right">
             <h2 className='title-aboutus'>Nosotros</h2>
           </div>

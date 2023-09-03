@@ -20,17 +20,17 @@ const Tasaciones = () => {
   const [ambiantes, setAmbiantes] = useState('');
   const [supcubierta, setSupCubierta] = useState('');
   const [suptotal, setSupTotal] = useState('');
-  const [Garage, setGarage] = useState('');
+  const [garage, setGarage] = useState('');
   const [extra, setExtra] = useState('');
   const navigate  = useNavigate();
 
   const Store = async(event)=>{
     event.preventDefault();
-    await axios.post(endpoint + "/",
+    await axios.post(endpoint + "/listTasacion",
       { name:nombre, email:email, number:numero, horario:horario,
         direccion:direccion, operacion:operacion, tipoPropiedad:tipopropiedad,
         ambiantes:ambiantes, supCubiertam2:supcubierta, supTotalm2:suptotal,
-        Garage:Garage, extra:extra
+        garage:garage, extra:extra
       });
       navigate('/');
   }
@@ -103,8 +103,9 @@ const Tasaciones = () => {
               value={operacion}
               onChange={(e)=>setOperacion(e.target.value)}
               className='select-tasaciones'>
-                <option value="">Venta</option>
-                <option value="">Alquiler</option>
+                <option value="select">seleccione</option>
+                <option value='0'>Venta</option>
+                <option value='1'>Alquiler</option>
               </select>
             </div>
 
@@ -114,13 +115,14 @@ const Tasaciones = () => {
               value={tipopropiedad}
               onChange={(e)=>setTipoPropiedad(e.target.value)}// REVISAR
               className='select-tasaciones'>
-                <option value="">Casa</option>
-                <option value="">Lote</option>
-                <option value="">Quinta</option>
-                <option value="">Campo</option>
-                <option value="">Departamento</option>
-                <option value="">Local</option>
-                <option value="">Cochera</option>
+                <option value="select">seleccione</option>
+                <option value= '0' >Casa</option>
+                <option value= '1' >Lote</option>
+                <option value="2">Quinta</option>
+                <option value="3">Campo</option>
+                <option value="4">Departamento</option>
+                <option value="5">Local</option>
+                <option value="6">Cochera</option>
               </select>
             </div>
             
@@ -130,11 +132,12 @@ const Tasaciones = () => {
               value={ambiantes}
               onChange={(e)=>setAmbiantes(e.target.value)}// REVISAR
               className='select-tasaciones'>
-                <option value="">1</option>
-                <option value="">2</option>
-                <option value="">3</option>
-                <option value="">4</option>
-                <option value="">5 o más</option>
+                <option value="select">seleccione</option>
+                <option value="0">1</option>
+                <option value="1">2</option>
+                <option value='2'>3</option>
+                <option value="3">4</option>
+                <option value="4">5 o más</option>
               </select>
             </div>
 
@@ -160,11 +163,12 @@ const Tasaciones = () => {
             <div className="tsc-box">
               <label className='label-tsc' htmlFor="">Garage</label>
               <select
-              value={Garage}
+              value={garage}
               onChange={(e)=>setGarage(e.target.value)}
               className='select-tasaciones'>
-                <option value="">No</option>
-                <option value="">Si</option>
+                <option value="select">seleccione</option>
+                <option value="0">No</option>
+                <option value="1">Si</option>
               </select>
             </div>
 

@@ -6,7 +6,7 @@
     padding: 16px 32px;
     color: azure;
     font-size: 16px;
-    font-weight: bold;    
+    font-weight: bold;
     position: relative;
     border-radius: 12px;
 }
@@ -94,7 +94,7 @@
 
 .form-group {
     display: grid;
-    grid-template-columns: repeat(1/*2*/, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     grid-gap: 40px;
     margin-bottom: 40px;
 }
@@ -110,7 +110,7 @@
     margin-bottom: 15px;
 }
 
-.contact-input, textarea {
+.contact-input, .contacto-textarea {
     padding: 20px 15px;
     background-color: #283864;
     border: 0;
@@ -128,7 +128,6 @@
 textarea {
     margin-bottom: 40px;
 }
-
 .success {
     position: absolute;
     top: 50px;
@@ -144,7 +143,7 @@ textarea {
 }
 
 @media only screen and (max-width:991px) {
-    
+
     body {
         padding: 30px;
     }
