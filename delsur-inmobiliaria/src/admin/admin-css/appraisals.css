@@ -1,0 +1,12 @@
+.thead-appraisals {
+    background-color: rgb(2, 2, 142) !important;
+}
+
+.appraisals-btn {
+    width: 130px;
+    line-height: 35px;
+    border-radius: 25px;
+    border: 1px solid #dee2e685;
+    opacity: 1;
+    background-color: rgb(199, 0, 57) !important;
+}

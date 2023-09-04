@@ -30,8 +30,13 @@ const AddProperties = () => {
                     </div>
 
                     <div className='form__group'>
-                        <label className="add-label" for="m2">m2</label>
-                        <input className="add-input" type="number" id='m2' name='m2' placeholder='0' required/>   
+                        <label className="add-label" for="cm2">Superficie cubierta (m2)</label>
+                        <input className="add-input" type="number" id='cm2' name='cm2' placeholder='0' required/>   
+                    </div>
+
+                    <div className='form__group'>
+                        <label className="add-label" for="tm2">Superficie total (m2)</label>
+                        <input className="add-input" type="number" id='tm2' name='tm2' placeholder='0' required/>   
                     </div>
 
                     <div className='form__group'>
@@ -55,9 +60,28 @@ const AddProperties = () => {
                     </div>
 
                     <div className='form__group'>
-                        <h4>Categoria</h4>
+                        <label className="add-label" for="garage">Localizacion</label>
+                        <input className="add-input" type="text" id='localizacion' name='localizacion' placeholder='0' required/>   
+                    </div>
+
+                    <div className='form__group'>
+                        <label className="add-label" for="price">Precio</label>
+                        <input className="add-input" type="number" id='price' name='price' placeholder='$1000' required/>   
+                    </div>
+
+                    <div className='form__group'>
+                        <h4>Propiedad Destacada</h4>
                         <select>
-                        <option>Seleccionar categoria</option>
+                        <option>Seleccionar opcion</option>
+                            <option value="casa">Si</option>
+                            <option value="lote">No</option>
+                        </select> 
+                    </div>
+
+                    <div className='form__group'>
+                        <h4>Tipo de propiedad</h4>
+                        <select>
+                        <option>Seleccionar tipo</option>
                             <option value="casa">Casa</option>
                             <option value="lote">Lote</option>
                             <option value="quinta">Quinta</option>
@@ -69,23 +93,34 @@ const AddProperties = () => {
                     </div>
 
                     <div className='form__group'>
-                        <h4>Tipo</h4>
+                        <h4>Operación</h4>
                         <select>
-                        <option>Seleccionar tipo</option>
+                        <option>Operación</option>
                             <option value="venta">Venta</option>
                             <option value="alquiler">Alquiler</option>
                         </select>
                     </div>
 
+                    <div className='file-wrapper'>
+                            <h3 className='img-file'>Imagenes</h3>
+                            <input className="addfile-input" accept='.jpg' type="file" id='upload' hidden required />   
+                            <label className="addfile-label" for="upload">
+                                <span><i class="fa-solid fa-cloud-arrow-up"></i></span>
+                                <p>Click para subir archivo</p>
+                            </label>
 
-                    <div className='form__group'>
-                        <label className="add-label" for="price">Precio</label>
-                        <input className="add-input" type="number" id='price' name='price' placeholder='$1000' required/>   
-                    </div>
-
-                    <div className='form__group'>
-                        <label className="add-label" for="files">Imagenes</label>
-                        <input className="addfile-input" type="file" id='file' name='file' placeholder='Imagenes' required/>   
+                        <div id='filewrapper'>
+                            <h3 className='uploaded'>Documentos subidos</h3>
+                            <div className="showfilebox">
+                                <div className="left-file">
+                                    <span className='filetype'>pdf</span>
+                                    <h3>imagen1-casa-adrogue.pdf</h3>
+                                </div>
+                                <div className="right-file">
+                                    <span>&#215;</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <button className="add-btn" type='submit'>Añadir Propiedad</button>

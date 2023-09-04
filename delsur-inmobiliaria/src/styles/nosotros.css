@@ -48,16 +48,8 @@ body {
 
 #split-screen {
     display: flex;
-    padding: 0; 
-    margin-top: 115px;
-}
-
-.left {
-    z-index: -10;
-    background: #0a1d37;
-    height: 100vh;
-    width: 50%;
-    padding-bottom: 50px;
+    padding: 0;
+    margin-top: 100px;
 }
 
 .right {
@@ -72,7 +64,7 @@ body {
     text-align: center;
     align-items: center;
 }
-
+    
 .title-aboutus {
     display: flex;
     justify-content: center;
@@ -80,9 +72,12 @@ body {
     /*background-color: rgba(123, 138, 138, 0.9);*/
 }
 
-.creative {
-    color: #fff !important;
-}
+.left {
+    background: #0a1d37;
+    height: 100vh;
+    width: 50%;
+    padding-bottom: 50px;
+}    
 
 .nosotros-title {
     color: #fff;
@@ -91,6 +86,19 @@ body {
     margin: auto;
     margin-bottom: 40px;
     margin-left: 80px;
+}
+
+.creative {
+    background: #ccc;
+    background: linear-gradient(
+        90deg,
+        rgb(229, 58, 19) 0%,
+        rgb(199, 0, 57) 50%,
+        rgb(151, 15, 67) 100%
+    );
+    -webkit-text-fill-color: transparent;
+    background-clip: unset;
+    -webkit-background-clip: text;
 }
 
 .nosotros-info {
@@ -102,6 +110,111 @@ body {
     margin-left: 80px;
 }
 
-.link-nosotros{
+.objetivo {
+    margin: 50px 0;
+}
+
+.mision {
+    margin: 50px 0;
+}
+
+.valores {
+    margin: 50px 0;
+}
+
+/*.link-nosotros{
     margin-left: 75px;
+}*/
+
+@media only screen and (max-width: 991px) {
+
+    .nosotros-title {
+        font-size: 40px;
+        margin-bottom: 8px;
+        margin-left: 60px;
+    }
+
+    .nosotros-info {
+        font-size: 16px;
+        margin-left: 60px;
+    }
+
+    .objetivo {
+        margin: 25px 0;
+    }
+    
+    .mision {
+        margin: 25px 0;
+    }
+    
+    .valores {
+        margin: 25px 0;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+
+    .left {
+        overflow: auto;
+    }
+
+    .nosotros-title {
+        font-size: 30px;
+        margin-bottom: 0;
+        margin-left: 40px;
+    }
+
+    .nosotros-info {
+        font-size: 16px;
+        margin-left: 40px;
+        overflow: scroll;
+    }
+
+    .objetivo {
+        margin-top: 3px 0;
+    }
+    
+    .mision {
+        margin-top: 3px 0;
+    }
+    
+    .valores {
+        margin-top: 3px 0;
+    }
+
+    .title-aboutus {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 466px) {
+    .nosotros-title {
+        font-size: 24px;
+        margin-bottom: 2px;
+        margin-left: 15px;
+    }
+
+    .nosotros-info {
+        font-size: 14px;
+        font-weight: 500;
+        margin-left: 15px;
+    }
+
+    .objetivo {
+        margin-top: 2px 0;
+    }
+    
+    .mision {
+        margin-top: 2px 0;
+    }
+    
+    .valores {
+        margin-top: 2px 0;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .nosotros-title {
+        font-size: 22px;
+    }
 }

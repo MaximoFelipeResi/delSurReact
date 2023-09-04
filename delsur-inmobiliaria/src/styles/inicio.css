@@ -7,10 +7,12 @@
 }
 
 .featured-properties {
-    margin: 50px 300px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    margin: 50px 200px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 33% 33% 33%;
+    column-gap: 60px;
 }
 
 article.card {
@@ -22,7 +24,7 @@ article.card {
 }
 
 .header-card {
-    margin: 20px 0;
+    margin: 20px 8px;
 }
 
 .header-card img {
@@ -91,3 +93,101 @@ article.card {
     width: 100%;
   }
   
+
+  @media only screen and (max-width: 1396px) {
+        .featured-properties {
+            grid-template-columns: 50% 50%;
+        }
+  }
+
+  @media only screen and (max-width: 950px) {
+        .featured-properties {
+            grid-template-columns: repeat(1, 1fr);
+            justify-content: center;
+        }
+
+        .button-container {
+            margin-right: 20px;
+        }
+
+        .btn-wsp {
+            cursor: pointer;
+            height: 60px;
+            width: 60px; 
+        }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .title-featuredprop {
+        font-size: 1.6rem;
+    }
+
+    article.card {
+        margin: 20px 20px;
+        max-width: 270px;
+    }
+
+    .button-container {
+        margin-right: auto;
+    }
+  }
+
+  @media only screen and (max-width: 600px) { 
+    article.card {
+        margin: 15px 15px;
+        max-width: 235px;
+    }
+
+    .category-card {
+        margin: 24px 0 0 0;
+        font-size: 14px;
+    }
+    
+    .text-card {
+        margin: 10px 0;
+        font-size: auto;
+    }
+    
+    .text-card p {
+        font-size: .9rem;
+    }
+
+    .button-container {
+        margin-right: auto;
+    }
+  }
+
+  @media only screen and (max-width: 440px) {
+    .title-featuredprop {
+        font-size: 1.2rem;
+    }
+
+    .featured-properties {
+        margin: 40px 50px;
+    }
+
+    article.card {
+        margin: 12px 12px;
+        max-width: 215px;
+    }
+
+    .text-card p {
+        font-size: .8rem;
+    }
+    
+    .btn-wsp {
+        cursor: pointer;
+        height: 50px;
+        width: 50px; 
+    }
+
+    .button-container {
+        margin-right: 0px;
+    }
+
+    .btn-wsp {
+        cursor: pointer;
+        height: 45px;
+        width: 45px; 
+    }
+  }

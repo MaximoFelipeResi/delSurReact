@@ -89,6 +89,7 @@
 .maps:hover {
     opacity: 1;
     border: 2px double red;
+    transition: 0.4s ease-in-out;
 }
 
 .footer__copyright {
@@ -97,3 +98,29 @@
     text-align: center;
 }
 
+@media only screen and (max-width: 1358px) { 
+    .footer {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .link-title{
+        font-size: 1.2rem !important;
+    }
+    
+    .social-icon {
+        height: 40px;
+        width: 40px;
+    }
+
+    .menu-item {
+        font-size: 15px !important;
+        margin: 1rem 0;
+    }
+
+    .maps {
+        width: 300px; 
+        height:300px;  
+    }
+}

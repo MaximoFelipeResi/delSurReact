@@ -1,0 +1,160 @@
+.admin__header {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 0px;
+    background: #0a1d37;
+}
+
+.admin__nav-top {
+    width: 100%;
+}
+
+.admin__nav-wrapper-top {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+.logout-btn {
+    background-color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 3px 5px;
+    border-radius: 10px;
+    position: relative;
+}
+
+
+#admin-navlist {
+    margin: 0 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; 
+}
+
+#admin-navlist li {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: #fff;
+    margin: 0;
+    padding: 0 20px;
+    position: relative;
+    font-size: 14px;
+}
+
+#admin-navlist li a {
+    font-size: 1.05rem;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+}
+
+#admin-navlist li a:hover {
+    color: lightblue;
+}
+
+#admin-navlist li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background-color: lightblue;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+.admin__nav-top-right img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.admin__nav-top-right {
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+}
+
+.admin__nav-wrapper-top .search__box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin__nav-top-right span i {
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.admin__nav-wrapper-top .logo h2 {
+    font-size: 1.1rem;
+    color: whitesmoke;
+}
+
+.admin__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    width: 100%;
+    height: 9px;
+    background: #d6e5fb;
+}
+
+.admin__navigation {
+    text-align: center;
+}
+
+.admin__menu-list {
+    display: flex;
+    align-items: center;
+    column-gap: 2.4rem;
+    justify-content: center;
+}
+
+.admin__menu-list .admin__menu-item a {
+    color: #0a1d37;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.active__admin-menu {
+    background: whitesmoke;
+}
+
+@media screen and (max-width: 768px) {
+    .admin__header {
+        padding: 10px 0px;
+    }
+    
+    .admin__nav-wrapper-top {
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .admin__nav-wrapper-top .logo h2 {
+        font-size: 1.05rem;
+    }
+    
+    .admin__menu {
+        padding: 30px 0;
+        justify-content: space-evenly;
+    }
+
+    .admin__menu-item {
+        font-size: .8rem;
+    }
+}

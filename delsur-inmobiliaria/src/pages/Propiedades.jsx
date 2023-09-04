@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Container, Row, Col } from "reactstrap";
+
 
 import Helmet from '../components/Helmet/Helmet'
 import CommonSection from '../components/UI/CommonSection'
+import ItemList from '../components/Body/ItemList'
 
 import "../styles/propiedades.css"
 
@@ -11,15 +12,17 @@ const Propiedades = () => {
   return (
     <Helmet title="Propiedades e Inmuebles">
         <CommonSection title="Propiedades"/>
-            <section>
+            <section className='properties__section'>
             <div className="filter__widget">
               <select>
-                <option>Filtrar por categoria</option>
+                <option>Tipo de propiedad</option>
                   <option value="casa">Casa</option>
                   <option value="departamento">Departamento</option>
+                  <option value="campo">Campo</option>
+                  <option value="lote">Lote</option>
+                  <option value="quinta">Quinta</option>
                   <option value="local">Local</option>
                   <option value="cochera">Cochera</option>
-                  <option value="lote">Lote</option>
               </select>
             </div>
 
@@ -32,20 +35,11 @@ const Propiedades = () => {
               </div>
 
               <div className="search__box">
-                <input type="text" placeholder='Search...'/>
-                  <span>
-                      <i class="fa-solid fa-magnifying-glass"></i>
-                  </span>
+                <input type="text" placeholder='Buscar...'/>
               </div>
-            </section>
-
-            <div className='published container'>
-              <div className='rectangle-card'>
-
-              </div>
-            </div>
-
+            </section>          
               
+              <ItemList />
 
             <div className='button-container'>
               <Link to="https://api.whatsapp.com/send?phone=541151822809&text=&source=&data=&app_absent=" target='blank'>

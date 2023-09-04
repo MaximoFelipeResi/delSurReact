@@ -4,7 +4,7 @@
     justify-content: space-around;
     padding: 10px 80px;
     position: fixed;
-    background-color: #fff;
+    background-color: white;
     box-shadow: 0 4px 5px #e5e5e5;
     width: 100%;
     z-index: 100;
@@ -37,7 +37,7 @@
 
 #navlist li a:hover,
 #navlist li a.active {
-    color: #15297c;
+    color: #0d376e;
 }
 
 #navlist li a:hover::after,
@@ -71,7 +71,7 @@
     }
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 768px) {
     .nav-bar {
         padding: 10px 40px;
         justify-content: space-around;

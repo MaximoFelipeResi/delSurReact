@@ -1,20 +1,99 @@
 import React from 'react'
+import { Container, Row } from "reactstrap";
+
+
+import "../admin/admin-css/admin-nav.css";
+
+import { NavLink, Link } from 'react-router-dom';
+
+const admin__nav = [
+    {
+        display:'Add Properties',
+        path:'add-properties',
+    },
+    {
+      display:'All Properties',
+      path:'all-properties'
+    },
+    {
+        display:'Queries',
+        path:'queries',
+    },
+    {
+        display:'Appraisals',
+        path:'appraisals'
+    },
+]
 
 const AdminNav = () => {
-  
-  return (
-    <div>
-      <nav>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </nav>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex officia laboriosam, minus laudantium soluta ut? Maxime laborum eos pariatur ullam accusamus? Quisquam cupiditate totam, ipsum perferendis in accusamus alias reiciendis mollitia unde, id eos non natus illo necessitatibus animi hic tenetur veritatis. Voluptatem numquam distinctio, fugit accusantium iusto animi rem ipsa tempora itaque quaerat minima. Quisquam odio odit eos, expedita modi eum debitis officia magnam quis saepe vel illo sint maiores perspiciatis repellat voluptatem accusantium ex tenetur corrupti fugit reiciendis, iure quibusdam autem. Magnam molestiae odit id culpa laudantium animi aspernatur sint possimus eligendi ipsam exercitationem totam repellat quod ab nihil magni, repellendus quasi. Magnam, ab quas soluta mollitia, nostrum esse a saepe est, ratione vitae quod omnis ullam. Nihil eius mollitia aperiam non ut itaque, autem saepe aliquid. Repellendus, sint repudiandae? A nam aspernatur quis ratione odit! Quam tempore a error, fuga in dicta ad! Omnis doloribus explicabo quibusdam doloremque. Numquam praesentium placeat atque quam tenetur qui. Architecto magnam eum nam modi, porro, ut et illo quod, facere alias cum dicta reiciendis eius eos deserunt ducimus? Impedit aliquid amet eum cum quia in dolor saepe. Doloremque eius ipsa suscipit molestiae pariatur quod accusantium reiciendis necessitatibus porro magnam maxime accusamus architecto tenetur impedit modi consequuntur adipisci explicabo, id eaque voluptate. Incidunt repellat accusantium quasi quod, consequuntur sed nobis tempore minus excepturi vero iure labore quam officiis porro cum praesentium ipsum! Officiis laborum labore minima nisi sed est quae alias, tenetur facere error sint veritatis unde tempora ipsa assumenda reprehenderit laudantium, quisquam, dolores debitis veniam animi ab doloribus deleniti sapiente. Aliquam vitae sint officiis hic id iste quibusdam facilis dicta adipisci, saepe dolorum expedita inventore, natus corporis. Unde, suscipit fugit officia laboriosam quos ipsa voluptatibus nobis nesciunt amet ducimus mollitia possimus fuga officiis quibusdam accusamus debitis voluptatum culpa. Assumenda consectetur facere possimus? Voluptatem optio eveniet modi quas mollitia ut! Cumque cum vel ea ratione soluta suscipit, perferendis animi quae recusandae saepe nihil optio dolores officia, ducimus provident quod dicta odio qui nulla aut libero totam nobis magni. Qui, aperiam! Ex, alias dolor commodi in accusamus provident inventore rerum velit necessitatibus, delectus asperiores esse laboriosam nihil! Voluptatibus, provident repellendus exercitationem quos similique necessitatibus facere praesentium culpa sit illo deleniti voluptate. Ut animi delectus harum minima expedita quam ex iure, porro odit assumenda laboriosam sed quia repellat quibusdam qui dolorum saepe explicabo quos voluptate. Quod pariatur consectetur aspernatur nisi. Ad ipsam quas optio quam, dolore nesciunt cupiditate cumque voluptates, voluptate necessitatibus aut dolor minus provident libero praesentium atque? Quos esse sapiente aliquam eos quas laboriosam! Rerum magnam facere, alias, quo, quasi eius perferendis officiis iste architecto maiores quae eveniet delectus perspiciatis corporis assumenda officia. Quidem veniam deserunt cupiditate voluptas magnam. Ut veniam dolorem, commodi excepturi doloremque quas, blanditiis hic nostrum maiores consequuntur quod vitae modi. In aspernatur, vero alias repudiandae ipsum odio earum iusto molestiae a quam omnis, facere dolorum consectetur consequuntur beatae. Nihil, temporibus corporis facilis vitae quae eum est libero dignissimos repellat recusandae inventore quia at ab eius incidunt atque suscipit!</p>
-    </div>
-  )
-}
 
-export default AdminNav
+  return (
+
+    <>
+    <header className='admin__header'>
+        <div className="admin__nav-top">
+            <Container>
+                <Row>
+                    <div className='admin__nav-wrapper-top'>
+                      <Link to="/">
+                        <div className="logo">
+                            <h2>DelSur Inmobiliaria</h2>
+                        </div>
+                      </Link>
+
+                        <div id='admin-navlist'>
+                          <ul id='admin-navlist'>
+                            <li>
+                              <a href="/">Inicio</a>
+                            </li>
+                            <li>
+                              <a href="propiedades">Propiedades</a>
+                            </li>
+                            <li>
+                              <a href="tasaciones">Tasaciones</a>
+                            </li>
+                            <li>
+                              <a href="nosotros">Nosotros</a>
+                            </li>
+                            <li>
+                              <a href="contacto">Contacto</a>
+                            </li>
+                            <button type='' className='logout-btn'>
+                              Logout
+                            </button>
+                            
+                          </ul>
+                        </div>
+                    </div>
+                </Row>
+            </Container>
+        </div>
+    </header>
+
+    <section className="admin__menu">
+        <Container>
+            <Row>
+                <div className="admin__navigation">
+                    <ul className="admin__menu-list">
+                        {admin__nav.map((item, index) => (
+                                <li className="admin__menu-item" key={index}>
+                                    <NavLink 
+                                    to={item.path} 
+                                    className={navClass => 
+                                    navClass.isActive ? "active__admin-menu" : "" 
+                                    }>
+                                    {item.display}
+                                    </NavLink>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </Row>
+        </Container>
+    </section>
+    </>
+  )
+};
+
+export default AdminNav;

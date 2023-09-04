@@ -21,9 +21,9 @@ const Queries = () => {
 
           <tr>
             <td datatype="Name">Luis</td>
-            <td datatype="Email">lui@gmail.com</td>
+            <td datatype="Email">luis1234@gmail.com</td>
             <td datatype='Telefono'>11 5263-9852</td>
-            <td datatype='Consulta'>Hola gente, aguante Lionel Andres Messi Cucittini!!!!!!!!!!!!!!</td>
+            <td datatype='Consulta'>Buenas tardes, me gustaria conocer más detalles de la casa de Adrogue que tienen en venta.</td>
             <td datatype='Delete'>
               <button className="queries-btn" type='delete'>
                 <i class="fa-regular fa-trash-can"></i>
@@ -35,7 +35,7 @@ const Queries = () => {
             <td datatype="Name">Luis</td>
             <td datatype="Email">lui@gmail.com</td>
             <td datatype='Telefono'>11 5263-9852</td>
-            <td datatype='Consulta'>Hola gente, aguante Lionel Andres Messi Cucittini!!!!!!!!!!!!!!</td>
+            <td datatype='Consulta'>Buenas tardes, me gustaria conocer más detalles de la casa de Adrogue que tienen en venta.</td>
             <td datatype='Delete'>
               <button className="queries-btn" type='delete'> 
                 <i class="fa-regular fa-trash-can"></i>

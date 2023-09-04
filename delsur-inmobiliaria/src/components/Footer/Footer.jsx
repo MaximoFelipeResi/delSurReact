@@ -21,6 +21,7 @@ const Footer = () => {
       <ul>
       <h2 className='link-title'>Links</h2>
         <Link to="propiedades"><li className='menu-item'>Propiedades</li></Link>
+        <Link to="tasaciones"><li className='menu-item'>Tasaciones</li></Link>
         <Link to="nosotros"><li className='menu-item'>Nosotros</li></Link>
         <Link to="contacto"><li className='menu-item'>Contacto</li></Link>
       </ul>

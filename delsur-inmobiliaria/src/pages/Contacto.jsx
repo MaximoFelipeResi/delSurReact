@@ -5,6 +5,7 @@ import Helmet from '../components/Helmet/Helmet.jsx';
 import CommonSection from '../components/UI/CommonSection'
 
 import "../styles/contacto.css";
+import ItemList from '../components/Body/ItemList.jsx';
 
 const Contacto = () => {
   return (
@@ -26,7 +27,7 @@ const Contacto = () => {
           <div className='form-group'>
 
             <div className='form-content'>
-              <label className='contact-label' for="name">Nombre</label>
+              <label className='contact-label' for="name">Nombre Completo</label>
               <input className='contact-input' type="text" id='name' name='name' placeholder='Nombre' required/>
             </div>
 
@@ -43,17 +44,18 @@ const Contacto = () => {
           </div>
 
           <label className='contact-label' for='message'>Consulta</label>
-          <textarea name="message" id="message" cols="30" rows="10" placeholder='Consulta...' required></textarea>
+          <textarea className='contacto-textarea' name="message" id="message" cols="30" rows="10" placeholder='Consulta...' required></textarea>
 
           <button type='submit' className='button-contact'>Enviar Mensaje</button>
 
         </form>
       </div>
       <div className='button-container'>
-                    <Link to="https://api.whatsapp.com/send?phone=541151822809&text=&source=&data=&app_absent=" target='blank'>
-                        <img className='btn-wsp' src="../src/assets/images/whatsapp-sticky.png" alt="Clickea aquí para contactarnos" />
-                    </Link>
-                </div>
+          <Link to="https://api.whatsapp.com/send?phone=541151822809&text=&source=&data=&app_absent=" target='blank'>
+            <img className='btn-wsp' src="../src/assets/images/whatsapp-sticky.png" alt="Clickea aquí para contactarnos" />
+          </Link>
+      </div>
+
       </Helmet>
     </div>
   )
