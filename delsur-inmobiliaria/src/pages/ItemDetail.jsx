@@ -101,7 +101,7 @@ const ItemDetail = () => {
 
                     <div className="icon-details">
                       <span className="icons"><i class="fa-solid fa-warehouse"></i></span>
-                      <span className='texts'> 1 Garage</span>
+                      <span className='texts'> 1 Garaje</span>
                     </div>
 
                     <div className="icon-details">
@@ -121,7 +121,7 @@ const ItemDetail = () => {
           </div>
 
           <div className="map-form__wrapper">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13108.048374564587!2d-58.3602822!3d-34.78047085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a32ccdb97df4d3%3A0x90c1e7251b0e4b9c!2sQuinta%20La%20Australiana!5e0!3m2!1ses!2sar!4v1693583611442!5m2!1ses!2sar" width="800" height="700" allowfullscreen="false" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe className='map__itemdetail' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13108.048374564587!2d-58.3602822!3d-34.78047085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a32ccdb97df4d3%3A0x90c1e7251b0e4b9c!2sQuinta%20La%20Australiana!5e0!3m2!1ses!2sar!4v1693583611442!5m2!1ses!2sar" width="800" height="700" allowfullscreen="false" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
               <form method='post' autoComplete='off' id='itemdetail-form' className='contact-form'>
 
@@ -133,12 +133,12 @@ const ItemDetail = () => {
                   </div>
 
                   <div className='itemdetail-form-content'>
-                    <label className='itemdetail-label' for="email">Correo</label>
+                    <label className='itemdetail-label' for="email">Email</label>
                     <input className='itemdetail-input' contact-label type="email" id='email' name='email'       placeholder='Correo' required/>
                   </div>
 
                   <div className='itemdetail-form-content'>
-                    <label className='itemdetail-label'for="phone">Telefono</label>
+                    <label className='itemdetail-label'for="phone">Teléfono</label>
                     <input className='itemdetail-input' type="tel" id='phone' name='phone' placeholder='Telefono' required/>
                   </div>
 
@@ -152,12 +152,8 @@ const ItemDetail = () => {
                 <button type='submit' className='button-contact'>Enviar Mensaje</button>
 
               </form>
+        </div>  
         </div>
-        
-        </div>
-        <aside>
-
-        </aside>
       </div>
     </div>
   )

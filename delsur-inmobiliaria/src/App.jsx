@@ -9,8 +9,9 @@ import Nosotros from "./pages/Nosotros"
 import Contacto from "./pages/Contacto";
 import ItemDetail from "./pages/ItemDetail";
 
-import AdminNav from "./admin/AdminNav";
+
 import AdminLogin from "./admin/AdminLogin";
+import AdminNav from "./admin/AdminNav";
 import AddProperties from "./admin/AddProperties";
 import AllProperties from "./admin/AllProperties";
 import Queries from "./admin/Queries";
@@ -29,10 +30,9 @@ function App() {
         <Route exact path="tasaciones" element={<Tasaciones/>}/>
         <Route exact path="nosotros" element={<Nosotros/>} />
         <Route exact path="contacto" element={<Contacto/>} />
-        <Route exact path="itemdetail" element={<ItemDetail/>}/> 
+        <Route exact path="itemdetail" element={<ItemDetail/>} />
 
 
-        <Route exact path="admin-nav" element={<AdminNav/>}/>
         <Route exact path="login" element={<AdminLogin/>}/>
         <Route exact path="add-properties" element={<AddProperties/>}/>
         <Route exact path="all-properties" element={<AllProperties/>}/>

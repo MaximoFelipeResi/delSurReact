@@ -20,12 +20,12 @@ const AddProperties = () => {
                     </div>
 
                     <div className='form__group'>
-                        <label className="add-label" for="direction">Direccion</label>
+                        <label className="add-label" for="direction">Dirección</label>
                         <input className="add-input" type="text" id='direction' name='direction' placeholder='Direccion' required/>
                     </div>
                 
                     <div className='form__group'>
-                        <label className="add-label" for="description">Descripcion</label>
+                        <label className="add-label" for="description">Descripción</label>
                         <input className="add-input" type="text" id='description' name='description' placeholder='Descripcion...' required/>   
                     </div>
 
@@ -55,12 +55,12 @@ const AddProperties = () => {
                     </div>
 
                     <div className='form__group'>
-                        <label className="add-label" for="garage">Garage</label>
+                        <label className="add-label" for="garage">Garaje</label>
                         <input className="add-input" type="number" id='garage' name='garage' placeholder='0' required/>   
                     </div>
 
                     <div className='form__group'>
-                        <label className="add-label" for="garage">Localizacion</label>
+                        <label className="add-label" for="garage">Localización</label>
                         <input className="add-input" type="text" id='localizacion' name='localizacion' placeholder='0' required/>   
                     </div>
 
@@ -102,7 +102,7 @@ const AddProperties = () => {
                     </div>
 
                     <div className='file-wrapper'>
-                            <h3 className='img-file'>Imagenes</h3>
+                            <h3 className='img-file'>Imágenes</h3>
                             <input className="addfile-input" accept='.jpg' type="file" id='upload' hidden required />   
                             <label className="addfile-label" for="upload">
                                 <span><i class="fa-solid fa-cloud-arrow-up"></i></span>

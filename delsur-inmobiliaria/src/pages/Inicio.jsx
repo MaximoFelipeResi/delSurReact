@@ -7,6 +7,7 @@ import { EffectCube, Pagination } from 'swiper/modules';
 import Helmet from '../components/Helmet/Helmet.jsx';
 import CommonSection from '../components/UI/CommonSection';
 
+
 import "../styles/inicio.css";
 import 'swiper/css';
 import 'swiper/css/effect-cube';
@@ -270,6 +271,8 @@ const Inicio = () => {
             </article>
 
           </div>
+
+            
 
           <div className='button-container'>
               <Link to="https://api.whatsapp.com/send?phone=541151822809&text=&source=& data=&app_absent=" target='blank'>

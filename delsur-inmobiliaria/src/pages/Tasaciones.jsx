@@ -8,12 +8,15 @@ const Tasaciones = () => {
   return (
     <Helmet title="Tasaciones">
     <div className='tasaciones-container'>
-
+      
       <div className="div-tsc">
       
         <h2 className='title-tasaciones'>Tasaciones
-        <p>¿Quieres vender o alquilar tu propiedad? <br />
-        Completa el formulario y nos contactaremos para asesorarte.</p>
+        <p>
+          ¿Necesitas conocer el valor de tu propiedad o actualizarlo?
+        <br />
+          Completa el siguiente formulario y nos contactamos a la brevedad.
+        </p>
         </h2>
 
         <form action="" className='tasaciones-form'>
@@ -45,7 +48,7 @@ const Tasaciones = () => {
           <div className='prop-box'>
 
             <div className="tsc-box">
-              <label className='label-tsc' htmlFor="">Dirección de la propiedad</label>
+              <label className='label-tsc' htmlFor="">Dirección Propiedad</label>
               <input className='input-tsc' type="text" required/>
             </div>
 
@@ -86,16 +89,16 @@ const Tasaciones = () => {
           <div className="extra-box">
 
             <div className="tsc-box">
-              <label className='label-tsc' htmlFor="">Superficie cubierta (en m2)</label>
+              <label className='label-tsc' htmlFor="">Sup. cubierta (en m2)</label>
               <input className='input-tsc' type="number" required/>
             </div>
             <div className="tsc-box">
-              <label className='label-tsc' htmlFor="">Superficie total (en m2)</label>
+              <label className='label-tsc' htmlFor="">Sup. total (en m2)</label>
               <input className='input-tsc' type="number" required/>
             </div>
 
             <div className="tsc-box">
-              <label className='label-tsc' htmlFor="">Garage</label>
+              <label className='label-tsc' htmlFor="">Garaje</label>
               <select className='select-tasaciones'>
                 <option value="">No</option>
                 <option value="">Si</option>
@@ -104,7 +107,7 @@ const Tasaciones = () => {
 
             <div className="tsc-box">
               <label className='label-tsc' htmlFor="">Extras</label>
-              <textarea className='textarea-tasaciones' id="" cols="28" rows="5">Amenities, dormitorios, baños...</textarea>
+              <textarea className='textarea-tasaciones' cols="26" rows="5">Amenities, dormitorios, baños...</textarea>
             </div>
 
           </div>

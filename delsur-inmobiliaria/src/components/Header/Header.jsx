@@ -14,13 +14,13 @@ class Header extends Component {
     <>
       <nav className='nav-bar'>
         <a href="/">
-          <img className='logo' src="../src/assets/images/logo.jpg" alt="Logo"/>
+          <img className='logo' src="../src/assets/images/logo.png" alt="Logo"/>
         </a>
 
         <div>
-          <ul id='navlist' className={this.state.clicked ? '#navlist active' : '#navlist'}>
+          <ul id='navlist' className={this.state.clicked ? '#navlist activo' : '#navlist'}>
             <li>
-              <a className='active' href="/">Inicio</a>
+              <a className='activo' href="/">Inicio</a>
             </li>
             <li>
               <a href="propiedades">Propiedades</a>

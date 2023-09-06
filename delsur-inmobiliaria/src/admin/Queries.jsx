@@ -12,7 +12,7 @@ const Queries = () => {
           <tr>
             <th>Nombre</th>
             <th>Email</th>
-            <th>Telefono</th>
+            <th>Teléfono</th>
             <th>Consulta</th>
             <th>Borrar</th>
           </tr>

@@ -8,19 +8,19 @@ import { NavLink, Link } from 'react-router-dom';
 
 const admin__nav = [
     {
-        display:'Add Properties',
+        display:'Añadir props.',
         path:'add-properties',
     },
     {
-      display:'All Properties',
+      display:'Todas las props.',
       path:'all-properties'
     },
     {
-        display:'Queries',
+        display:'Consultas',
         path:'queries',
     },
     {
-        display:'Appraisals',
+        display:'Tasaciones',
         path:'appraisals'
     },
 ]
@@ -58,9 +58,9 @@ const AdminNav = () => {
                             <li>
                               <a href="contacto">Contacto</a>
                             </li>
-                            <button type='' className='logout-btn'>
-                              Logout
-                            </button>
+                            <li type='' className='logout-btn'>
+                              <a href="">Logout</a>
+                            </li>
                             
                           </ul>
                         </div>

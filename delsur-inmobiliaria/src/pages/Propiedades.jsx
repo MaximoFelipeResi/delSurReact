@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import Helmet from '../components/Helmet/Helmet'
 import CommonSection from '../components/UI/CommonSection'
 import ItemList from '../components/Body/ItemList'
+import Pagination from '../components/Body/Pagination'
 
 import "../styles/propiedades.css"
 
@@ -40,6 +41,8 @@ const Propiedades = () => {
             </section>          
               
               <ItemList />
+
+              <Pagination/>
 
             <div className='button-container'>
               <Link to="https://api.whatsapp.com/send?phone=541151822809&text=&source=&data=&app_absent=" target='blank'>

@@ -12,13 +12,13 @@ const Appraisals = () => {
           <tr>
             <th>Nombre</th>
             <th>Email</th>
-            <th>Telefono</th>
+            <th>Teléfono</th>
             <th>Horario de contacto</th>
-            <th>Direccion</th>
+            <th>Dirección</th>
             <th>Operación</th>
             <th>Tipo de propiedad</th>
             <th>Ambientes</th>
-            <th>Garage</th>
+            <th>Garaje</th>
             <th>Sup.cubierta</th>
             <th>Sup. total</th>
             <th>Extra</th>

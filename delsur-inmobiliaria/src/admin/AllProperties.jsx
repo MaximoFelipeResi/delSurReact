@@ -9,6 +9,7 @@ const AllProperties = () => {
     <div className='allproperties-container'>
 
         <h2>Todas las Propiedades</h2>
+        <br />
         <div className="table-properties">
         <table className='all-table'>
             <thead className='all-thead'>
@@ -17,7 +18,7 @@ const AllProperties = () => {
                   <th className='all-th'>Titulo</th>
                   <th className='all-th'>Tipo</th>
                   <th className='all-th'>Precio</th>
-                  <th className='all-th'>Accion</th>
+                  <th className='all-th'>Acción</th>
                 </tr>
             </thead>
             <tbody className='all-tbody'>

@@ -36,12 +36,12 @@
 }
 
 #navlist li a:hover,
-#navlist li a.active {
-    color: #0d376e;
+#navlist li a.activo {
+    color: #000;
 }
 
 #navlist li a:hover::after,
-#navlist li a.active::after {
+#navlist li a.activo::after {
     content: "";
     width: 30%;
     height: 2px;
@@ -88,7 +88,7 @@
         align-items: flex-start;
         justify-content: flex-start;
         position: fixed;
-        top: 90px;
+        top: 74px;
         right: -300px;
         width: 300px;
         height: 100vh;
@@ -99,7 +99,7 @@
         transition: 0.3s ease-in-out;
     }
 
-    #navlist.active {
+    #navlist.activo {
         right: 0px;
     }
 

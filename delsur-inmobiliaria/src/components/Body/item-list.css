@@ -4,6 +4,7 @@
 }
 
 .rectangle-card {
+    margin: 80px 0;
     display: flex;
     background-color: #fff;
     border-radius: 1rem;
