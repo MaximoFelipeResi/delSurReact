@@ -45,14 +45,13 @@ const AddProperties = () => {
     console.log(e);
     setArchivo({
       archivos : e.target.files,
-      //archivosnombre : e.target.files[0].name,  // NO SIRVE
+      
     });
     
   }
 
-  const onSubmit =(e)=>{
-    //console.log(e);
-    //e.preventDefault();
+  const onSubmit =()=>{
+
     sendFiles();
   }
   const sendFiles = async ()=>{
@@ -66,11 +65,9 @@ const AddProperties = () => {
     let index = 0;
     const fd = new FormData();
 
-    //console.log(archivos);
-
     for(let archive of archivos.archivos){
       console.log(archive);
-      // || ID_TIMESTAMP
+      
       const filename = `${last_id}_${index}.jpg`;
 
       fd.append('files[]', archive, filename);
@@ -78,10 +75,7 @@ const AddProperties = () => {
 
     }
 
-
     axios.post(endpoint + "/upload", fd).then((res)=>{
-      //console.log(res);
-      //console.log("archivos",archive.name, "subido");
     });
   
   }
@@ -110,8 +104,6 @@ const AddProperties = () => {
     navigate('/');
   }
 
-
-
   if (!checkUser()) {
     location.href = "/";
   }
@@ -122,7 +114,7 @@ const AddProperties = () => {
         <div>
           <Helmet title="Agregar Propiedades">
             <form className="add-form"  onSubmit={Store}>
-              <h2>Agregar Propiedades</h2>
+              <h2 className='title-featuredprop'>Agregar Propiedades</h2>
 
               <div className="addform-container">
                 <div className="form__group">
@@ -143,7 +135,7 @@ const AddProperties = () => {
 
                 <div className="form__group">
                   <label className="add-label" for="direction">
-                    Direccion
+                    Dirección
                   </label>
                   <input
                     className="add-input"
@@ -159,7 +151,7 @@ const AddProperties = () => {
 
                 <div className="form__group">
                   <label className="add-label" for="description">
-                    Descripcion
+                    Descripción
                   </label>
                   <input
                     className="add-input"
@@ -256,7 +248,7 @@ const AddProperties = () => {
 
                 <div className="form__group">
                   <label className="add-label" for="garage">
-                    Garage
+                    Garaje
                   </label>
                   <input
                     className="add-input"
@@ -271,7 +263,7 @@ const AddProperties = () => {
                 </div>
                 <div className="form__group">
                   <label className="add-label" for="map">
-                    Localizacion
+                    Localización
                   </label>
                   <input
                     className="add-input"
@@ -319,9 +311,9 @@ const AddProperties = () => {
                 value={categoria}
                 onChange={(e)=>setCategoria(e.target.value)}
                 >
-                  <h4>Categoria</h4>
+                  <h4>Tipo de propiedad</h4>
                   <select>
-                    <option>Seleccionar categoria</option>
+                    <option>Seleccionar tipo</option>
                     <option value="0">Casa</option>
                     <option value="1">Lote</option>
                     <option value="2">Quinta</option>
@@ -336,7 +328,7 @@ const AddProperties = () => {
                 value={operacion}
                 onChange={(e)=>setOperacion(e.target.value)}
                 >
-                  <h4>Tipo</h4>
+                  <h4>Operación</h4>
                   <select>
                     <option>Seleccionar tipo</option>
                     <option value= "0" >Venta</option>
@@ -345,7 +337,7 @@ const AddProperties = () => {
                 </div>
 
                         <div className='file-wrapper'>
-                            <h3 className='img-file'>Imagenes</h3>
+                            <h3 className='img-file'>Imágenes</h3>
                             <input className="addfile-input" onChange={fileSelecHandler} multiple type="file" id='upload' hidden required />   
                             <label className="addfile-label" for="upload">
                                 <span><i class="fa-solid fa-cloud-arrow-up"></i></span>
@@ -375,23 +367,6 @@ const AddProperties = () => {
                 <button className="add-btn" onClick={getImagesOnSubmit} type="submit">
                   Añadir Propiedad
                 </button>
-
-                {/*<div className="form__group"
-                value={destacado}
-                onChange={(e)=>setCategoria(e.target.value)} 
-                >
-                <label className="add-label" for="price">
-                    Destacado
-                  </label>
-                  <input
-                    className="add-input"
-                    type="text"
-                    id="price"
-                    placeholder="destacado"
-                    required
-                  />
-              
-                </div>*/}
 
               </div>
               

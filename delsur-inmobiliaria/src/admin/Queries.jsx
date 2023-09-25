@@ -39,10 +39,11 @@ const Queries = (props) => {
       <table className="table">
         <thead>
           <tr>
-          <th>Id</th>
+            <th>#</th>
+            <th>ID-Prop</th>
             <th>Nombre</th>
             <th>Email</th>
-            <th>Telefono</th>
+            <th>Teléfono</th>
             <th>Consulta</th>
             <th>Borrar</th>
           </tr>
@@ -51,6 +52,7 @@ const Queries = (props) => {
           {consultas.map((consulta)=>(
             <tr key={consulta.id}>
             <td datatype="Id">{consulta.id}</td>
+            <td datatype="Id-Prop">{consulta.IDProp}</td>
             <td datatype="Name">{consulta.fullname}</td>
             <td datatype="Email">{consulta.email}</td>
             <td datatype='Telefono'>{consulta.number}</td>

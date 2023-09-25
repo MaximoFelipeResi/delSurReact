@@ -72,6 +72,15 @@
     border-radius: 0.6rem;
 }
 
+.filtrosContainer {
+    display: flex;
+    flex-direction: row;
+
+    .search__box {
+        width: 75%;
+    }
+}
+
 
 @media only screen and (max-width: 1080px) {
     .rectangle-content {
@@ -101,6 +110,7 @@
     }
 
     .rectangle-img {
+        width: 100%;
         height: auto;
         flex: 1;
     }

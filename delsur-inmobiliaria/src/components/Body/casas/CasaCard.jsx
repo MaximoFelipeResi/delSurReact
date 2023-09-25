@@ -37,44 +37,11 @@ const casaCard = (data) => {
     }
   }
 
-  function parseCategoria(num) {
-    switch (num) {
-      case 0:
-        return "Casa";
-        break;
-
-      case 1:
-        return "Lote";
-        break;
-      case 2:
-        return "Quinta";
-        break;
-      case 3:
-        return "Campo";
-        break;
-
-      case 4:
-        return "Departamento";
-        break;
-
-      case 5:
-        return "Local";
-        break;
-
-      case 6:
-        return "Cochera";
-        break;
-
-      default:
-        break;
-    }
-  }
-
   return (
     <div>
       <div className="properties-container">
         <div className="rectangle-card">
-          <div className="rectangle-img cardImage" >
+          <div className="rectangle-img" id="cardImage" >
             <img
               src={store.getState().apiArchivos + "/" + image}
               alt="Imagen de la propiedad"
@@ -140,6 +107,7 @@ const casaCard = (data) => {
 
             <div className="rectangle-btn" class="button">
               <a
+              href="javascript:void(0)"
                 onClick={() => {
                   store.dispatch(setCasa(data.data));
                   location.href = "itemdetail";
@@ -148,12 +116,6 @@ const casaCard = (data) => {
                 Más detalles
               </a>
             </div>
-
-            {/*<div className="rectangle-btn">
-              <a href="itemdetail" class="button"> Mas detalles
-                <ItemDetail props={data.data} />
-              </a>
-</div>*/}
           </div>
         </div>
       </div>

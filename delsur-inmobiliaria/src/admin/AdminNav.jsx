@@ -3,28 +3,25 @@ import { useEffect } from 'react';
 import axios from 'axios';
 import {store, setAuth} from '../redux/store/store';
 import { Container, Row } from "reactstrap";
-
-
 import "../admin/admin-css/admin-nav.css";
-
 import { NavLink, Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 const admin__nav = [
     {
-        display:'Add Properties',
+        display:'Añadir Props',
         path:'addproperties',
     },
     {
-      display:'All Properties',
+      display:'Todas Props',
       path:'allproperties'
     },
     {
-        display:'Queries',
+        display:'Consultas',
         path:'queries',
     },
     {
-        display:'Appraisals',
+        display:'Tasaciones',
         path:'appraisals'
     },
 ]

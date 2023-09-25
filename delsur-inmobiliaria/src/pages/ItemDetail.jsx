@@ -2,15 +2,30 @@ import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { store } from "../redux/store/store";
 import ImageGrid from "../components/Body/casas/ImageGrid";
+import { useNavigate } from "react-router-dom";
 
 import "../styles/item-detail.css";
 
-const ItemDetail = (props) => {
+const ItemDetail = () => {
   const [images, setImages] = useState([]);
   const [casa, setCasa] = useState([]);
   let image_list = [];
 
-  //console.log("casa", casa);
+
+// ********** Contactos **********
+  //const [idProp, setIdProp] = useState('');
+  const [nombre, setNombre] = useState('');
+  const [numero, setNumero] = useState('');
+  const [email, setEmail] = useState('');
+  const [descripcion, setDescripcion] = useState('');
+  const navigate = useNavigate();
+
+  const Store = async(event)=>{
+    event.preventDefault();
+    await  axios.post(store.getState().api + "/Listaqueries",
+      {fullname:nombre, number:numero, email:email, descripcion:descripcion});
+      navigate('/');
+  }
 
   useEffect(() => {
     setCasa(store.getState().casa);
@@ -20,12 +35,30 @@ const ItemDetail = (props) => {
       .then((response) => {
         setImages(response.data.files);
       });
-  }, []);
+  },[]);
 
 
   for (let image of images) {
-    // console.log(image);
     image_list.push(<ImageGrid image={store.getState().apiArchivos + "/" + image}/>);
+  }
+
+
+
+  function esDestacado(num){
+    switch(num){
+      case 0:
+        return ;
+
+      case 1 : 
+        return (
+          <span>
+            <i id="star" class="fa-solid fa-star fa-xl"></i>
+          </span>
+        ) ;
+
+      default:
+        break;
+    }
   }
 
   function parseOperacion(num) {
@@ -79,79 +112,26 @@ const ItemDetail = (props) => {
   return (
     <div className="itemdetail">
       <div className="itemdetail-container">
-        {/*  TRAER LAS IMAGENES AQUI */}
         <div className="grid-gallery">
         
 
         {image_list}
-
-{/*
-          
-
-  {() => {
-            for (let image of images) {
-              console.log(image);
-              image_list.push(`
-                <div className="grid-item">
-                  <a
-                    href="../src/assets/images/cafefondo1.jpg"
-                    data-lightbox="gridImage"
-                  >
-                    <img
-                      src={store.getState().apiArchivos + "/" + image}
-                      alt=""
-                    />
-                  </a>
-                </div>
-                `
-                
-              );
-            }
-          }}
-
-          
-
-          <div className='grid-item'>
-            <a href="../src/assets/images/cafefondo1.jpg" data-lightbox="gridImage">
-            <img src={store.getState().apiArchivos + "/" + images[2]} alt="" />
-            </a>
-          </div>
-
-          <div className='grid-item'>
-            <a href="../src/assets/images/cafefondo1.jpg" data-lightbox="gridImage">
-              <img src="../src/assets/images/cafefondo1.jpg" alt="" />
-            </a>
-          </div>
-
-          <div className='grid-item'>
-            <a href="../src/assets/images/cafefondo1.jpg" data-lightbox="gridImage">
-              <img src="../src/assets/images/cafefondo1.jpg" alt="" />
-            </a>
-          </div>
-          
-          <div className='grid-item'>
-            <a href="../src/assets/images/cafefondo1.jpg" data-lightbox="gridImage">
-              <img src="../src/assets/images/cafefondo1.jpg" alt="" />
-            </a>
-          </div>
-          
-          */}
         </div>
 
         <div className="itemdetail-body">
           <div className="price__item">
             <h2 className="item__main">
-              {parseCategoria(casa.categoria)} categoria
+              Tipo de propiedad: {parseCategoria(casa.categoria)}
             </h2>
-            <h2 className="item__main">U$D {casa.precio} precio</h2>
+            <h2 className="item__main">U$D {casa.precio}</h2>
           </div>
 
           <div className="details__wrapper">
-            <h2 className="item__title">{casa.titulo} titulo</h2>
-            <h3 className="item__info">{casa.descripcion} info</h3>
+            <h2 className="item__title">{casa.titulo} </h2>
+            <h3 className="item__info">{casa.direccion}</h3>
             <div className="state__prop">
               <h3 className="item__state">
-                {parseOperacion(casa.operacion)} operacion
+                {parseOperacion(casa.operacion)}
               </h3>
             </div>
             <div className="icons__wrapper">
@@ -178,7 +158,7 @@ const ItemDetail = (props) => {
                 </span>
                 <span className="texts">
                   {" "}
-                  {casa.ambientes} Ambientes
+                  {casa.ambientes} 
                 </span>
               </div>
 
@@ -188,7 +168,7 @@ const ItemDetail = (props) => {
                 </span>
                 <span className="texts">
                   {" "}
-                  {casa.dormitorios} Dormitorios
+                  {casa.dormitorios}
                 </span>
               </div>
 
@@ -196,22 +176,24 @@ const ItemDetail = (props) => {
                 <span className="icons">
                   <i class="fa-solid fa-bath"></i>
                 </span>
-                <span className="texts"> {casa.banios} Baños</span>
+                <span className="texts"> {casa.banios}</span>
               </div>
 
               <div className="icon-details">
                 <span className="icons">
                   <i class="fa-solid fa-warehouse"></i>
                 </span>
-                <span className="texts"> {casa.garage} Garage</span>
+                <span className="texts"> {casa.garage} </span>
               </div>
-
+              
+              
               <div className="icon-details">
-                <span>
+                {/*<span>
                   <i id="star" class="fa-solid fa-star fa-xl"></i>
-                </span>
+                </span> */}
+                {esDestacado(casa.destacado) !== 1 ? esDestacado(casa.destacado) : null}
                 <span className="text-star">
-                  {/*{consulta.destacado} */} Propiedad Destacada
+                 
                 </span>
               </div>
             </div>
@@ -226,16 +208,17 @@ const ItemDetail = (props) => {
           </div>
 
           <div className="map-form__wrapper">
-            <iframe
+            <iframe className='map__itemdetail'
               src={casa.map}
               width="800"
               height="700"
               allowfullscreen="false"
               loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div/>
 
-            <form
+            <form onSubmit={Store}
               method="post"
               autoComplete="off"
               id="itemdetail-form"
@@ -246,12 +229,15 @@ const ItemDetail = (props) => {
                   <label className="itemdetail-label" for="name">
                     Nombre Completo
                   </label>
+      
                   <input
                     className="itemdetail-input"
                     type="text"
                     id="name"
                     name="name"
                     placeholder="Nombre"
+                    value={nombre}
+                    onChange={(e)=>setNombre(e.target.value)}
                     required
                   />
                 </div>
@@ -266,6 +252,8 @@ const ItemDetail = (props) => {
                     type="email"
                     id="email"
                     name="email"
+                    value={email}
+                    onChange={(e)=>setEmail(e.target.value)}
                     placeholder="Correo"
                     required
                   />
@@ -280,6 +268,8 @@ const ItemDetail = (props) => {
                     type="tel"
                     id="phone"
                     name="phone"
+                    value={numero}
+                    onChange={(e)=>setNumero(e.target.value)}
                     placeholder="Telefono"
                     required
                   />
@@ -292,6 +282,8 @@ const ItemDetail = (props) => {
               <textarea
                 className="itemdetail-textarea"
                 name="message"
+                value={descripcion}
+                onChange={(e)=>setDescripcion(e.target.value)}
                 id="message"
                 cols="30"
                 rows="6"

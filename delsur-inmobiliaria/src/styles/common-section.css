@@ -1,7 +1,7 @@
 .common__section {
     background: linear-gradient(rgba(0, 0, 0, 0.562), rgba(0, 0, 0, 0.562)), url("../assets/images/comprar_casa.jpg") no-repeat 0rem 18%;
     background-size: cover;
-    margin-top: 100px;
+    margin-top: auto;
     padding: 100px 0px;
     display: flex;
     align-items: center;

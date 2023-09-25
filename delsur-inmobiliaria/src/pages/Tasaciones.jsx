@@ -34,19 +34,18 @@ const Tasaciones = () => {
       });
       navigate('/');
   }
-
-
-
-
-
+  
   return (
     <div className='tasaciones-container'>
 
       <div className="div-tsc">
       
-        <h2 className='title-tasaciones'>Tasaciones
-        <p>¿Quieres vender o alquilar tu propiedad? <br />
-        Completa el formulario y nos contactaremos para asesorarte.</p>
+      <h2 className='title-tasaciones'>Tasaciones
+        <p>
+          ¿Necesitas conocer el valor de tu propiedad o actualizarlo?
+        <br />
+          Completa el siguiente formulario y nos contactamos a la brevedad.
+        </p>
         </h2>
 
         <form onSubmit={Store} action="" className='tasaciones-form'>
@@ -54,7 +53,7 @@ const Tasaciones = () => {
           <div className='datos-box'>
 
             <div className="tsc-box">
-              <label className='label-tsc' htmlFor="">Nombre</label>
+              <label className='label-tsc' htmlFor="">Nombre completo</label>
               <input
               value={nombre}
               onChange={(e)=>setNombre(e.target.value)}
@@ -103,9 +102,9 @@ const Tasaciones = () => {
               value={operacion}
               onChange={(e)=>setOperacion(e.target.value)}
               className='select-tasaciones'>
-                <option value="select">seleccione</option>
-                <option value='0'>Venta</option>
-                <option value='1'>Alquiler</option>
+                <option value="select">Seleccione</option>
+                <option value="0">Venta</option>
+                <option value="1">Alquiler</option>
               </select>
             </div>
 
@@ -115,9 +114,9 @@ const Tasaciones = () => {
               value={tipopropiedad}
               onChange={(e)=>setTipoPropiedad(e.target.value)}// REVISAR
               className='select-tasaciones'>
-                <option value="select">seleccione</option>
-                <option value= '0' >Casa</option>
-                <option value= '1' >Lote</option>
+                <option value="select">Seleccione</option>
+                <option value="0" >Casa</option>
+                <option value="1" >Lote</option>
                 <option value="2">Quinta</option>
                 <option value="3">Campo</option>
                 <option value="4">Departamento</option>
@@ -132,7 +131,7 @@ const Tasaciones = () => {
               value={ambiantes}
               onChange={(e)=>setAmbiantes(e.target.value)}// REVISAR
               className='select-tasaciones'>
-                <option value="select">seleccione</option>
+                <option value="select">Seleccione</option>
                 <option value="0">1</option>
                 <option value="1">2</option>
                 <option value='2'>3</option>
@@ -146,14 +145,14 @@ const Tasaciones = () => {
           <div className="extra-box">
 
             <div className="tsc-box">
-              <label className='label-tsc' htmlFor="">Superficie cubierta (en m2)</label>
+              <label className='label-tsc' htmlFor="">Sup. cubierta (en m2)</label>
               <input
               value={supcubierta}
               onChange={(e)=>setSupCubierta(e.target.value)}
               className='input-tsc' type="number" required/>
             </div>
             <div className="tsc-box">
-              <label className='label-tsc' htmlFor="">Superficie total (en m2)</label>
+              <label className='label-tsc' htmlFor="">Sup. total (en m2)</label>
               <input
               value={suptotal}
               onChange={(e)=>setSupTotal(e.target.value)}
@@ -161,12 +160,12 @@ const Tasaciones = () => {
             </div>
 
             <div className="tsc-box">
-              <label className='label-tsc' htmlFor="">Garage</label>
+              <label className='label-tsc' htmlFor="">Garaje</label>
               <select
               value={garage}
               onChange={(e)=>setGarage(e.target.value)}
               className='select-tasaciones'>
-                <option value="select">seleccione</option>
+                <option value="select">Seleccione</option>
                 <option value="0">No</option>
                 <option value="1">Si</option>
               </select>
@@ -177,7 +176,7 @@ const Tasaciones = () => {
               <textarea
               value={extra}
               onChange={(e)=>setExtra(e.target.value)}
-              className='textarea-tasaciones' id="" cols="30" rows="6">Amenities, dormitorios, baños...</textarea>
+              className='textarea-tasaciones' id="" cols="26" rows="5">Amenities, dormitorios, baños...</textarea>
             </div>
 
           </div>

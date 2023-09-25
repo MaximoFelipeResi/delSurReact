@@ -1,53 +1,54 @@
 .tasaciones-container {
     margin-top: 90px;
     padding: 0px;
-    display: flex;
-    justify-content: center;
     min-height: 100vh;
-    align-items: center;
     width: 100%;
-    background: #0a1d37;
+    background: url(../src/assets/images/casa-tasaciones.png) no-repeat;
     background-position: center;
     background-size: cover;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .title-tasaciones {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
     color: #fff;
 }
 
+.title-tasaciones p{
+    color: #fff;
+}
 
 .div-tsc {
     position: relative;
-    width: 1400px;
-    height: 850px;
+    width: max-content;
+    height: 700px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 20px;
-    backdrop-filter: blur(15px);
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    
+    backdrop-filter: blur(8px);
+    display: grid;
+    justify-items: center;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    grid-gap: 0px;
 }
 
 .tasaciones-form {
+    height: 500px;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
+    align-items: center;
+    justify-items: start;
+
 }
 
 .datos-box {
-    min-height: 200px;
-    width: max-content;
     display: flex;
-    align-items: center;
+    flex-direction: row;
 }
 
 .prop-box{
@@ -61,8 +62,9 @@
 }
 
 .tsc-box {
+    display: auto;
     position: relative;
-    margin: 30px 10px;
+    margin: 20px 10px;
     width: 250px;
     height: 100px;
 }
@@ -86,14 +88,15 @@
 }
 
 .textarea-tasaciones{
+    border-radius: 5px;
+    padding: 8px;
     background-color: #fff;
     color: black;
 }
 
 .button__container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-column: 2;
     height: 60px;
     margin: 0;
 }
@@ -103,3 +106,140 @@
     height: 60px;
     background-color: #194179;
 }
+
+ @media only screen and (max-width: 1090px) { 
+    .tasaciones-container {
+        margin-top: 10px;
+        height: 1500px;
+    }
+
+    .title-tasaciones{
+        display: flex;
+        padding-left: 100px;
+        height: 100px;
+        font-size: 1.8rem;
+    }
+
+    .title-tasaciones p {
+        font-size: .8rem;
+    }
+
+    .div-tsc {
+        width: 820px;
+        height: 1100px;
+        display: flex;
+        flex-wrap: wrap;
+        grid-template-rows: 20%;
+        grid-gap: 0px;
+        justify-items: center;
+    }
+
+    .tasaciones-form {
+        display: flex;
+        flex-direction: column;
+        min-height: 1000px;
+    }
+
+    .datos-box {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .prop-box{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .extra-box {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .button__container {
+        display: flex;
+        flex-direction: row;
+        margin-top: 80px;
+    }
+
+    .tsc-box {
+        margin: 10px 8px;
+        width: 200px;
+        height: 100px;
+    }
+    
+    .input-tsc {
+        margin: 0;
+        width: 190px;
+        border: 2px solid black;
+    }
+
+    .select-tasaciones {
+        width: 200px;
+        height: 38px;
+    }
+ }
+
+ @media only screen and (max-width: 456px) {
+    .tasaciones-container {
+        margin-top: 0px;
+        height: 1400px;
+    }
+
+    .title-tasaciones {
+        padding-left: 0px;
+        font-size: 1.4rem !important;
+    }
+
+    .title-tasaciones p {
+        font-size: .8rem;
+    }
+
+    .tasaciones-form {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        grid-gap: 0px;
+    }
+
+    .datos-box {
+        gap: 0;
+    }
+    
+    .prop-box{
+        gap: 0;
+    }
+    
+    .extra-box {
+        gap: 0;
+    }
+
+    .button__container {
+        display: flex;
+        padding-left: 150px;
+        margin-top: 80px;
+    }
+    
+    .tsc-box {
+        margin: 5px 20px;
+        width: 135px;
+        height: 100px;
+    }
+    
+    .input-tsc {
+        margin: 0;
+        width: 150px;
+    }
+
+    .label-tsc {
+        font-size: .8rem;
+    }
+
+    .select-tasaciones {
+        width: 150px;
+        height: 35px;
+    }
+
+    .textarea-tasaciones {
+        width: 150px;
+    }
+ }

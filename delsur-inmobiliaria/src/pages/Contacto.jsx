@@ -28,6 +28,7 @@ const Contacto = () => {
       navigate('/');
   }
 
+ 
 
 
 
@@ -52,7 +53,7 @@ const Contacto = () => {
           <div className='form-group'>
 
             <div className='form-content'>
-              <label className='contact-label' for="name">Nombre</label>
+              <label className='contact-label' for="name">Nombre completo</label>
               <input className='contact-input'
               value={nombre}
               onChange={(e)=>setNombre(e.target.value)}
@@ -68,7 +69,7 @@ const Contacto = () => {
             </div>
 
             <div className='form-content'>
-              <label className='contact-label'for="phone">Telefono</label>
+              <label className='contact-label'for="phone">Teléfono</label>
               <input className='contact-input'
               value={numero}
               onChange={(e)=>setNumero(e.target.value)}

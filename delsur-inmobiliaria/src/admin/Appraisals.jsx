@@ -7,7 +7,7 @@ import { store, setAuth } from '../redux/store/store';
 import {checkUser} from '../utils/user';
 
 import "./admin-css/appraisals.css";
-const endpoint = store.getState().api; // == store.getState().api            CREO
+const endpoint = store.getState().api; 
 const Appraisals = (props) => {
   const navigate = useNavigate();
 
@@ -25,18 +25,58 @@ const Appraisals = (props) => {
   }
   const deleteTasaciones=async(id)=>{
     await axios.delete(`${endpoint}/addtasacion/${id}`);
-    getAllTasaciones();  //actualizamos estado
+    getAllTasaciones(); 
 
   }
-/*
 
-  const checkUser = () =>{
-    if(!store.getState().user){
-      navigate('/');
+  function parseOperacion(num) {
+    switch (parseInt(num)) {
+      case 0:
+        return "Venta";
+        break;
+
+      case 1:
+        return "Alquiler";
+        break;
+
+      default:
+        break;
     }
   }
 
-  */
+  function parseCategoria(num) {
+    switch (parseInt(num)) {
+      case 0:
+        return "Casa";
+        break;
+
+      case 1:
+        return "Lote";
+        break;
+      case 2:
+        return "Quinta";
+        break;
+      case 3:
+        return "Campo";
+        break;
+
+      case 4:
+        return "Departamento";
+        break;
+
+      case 5:
+        return "Local";
+        break;
+
+      case 6:
+        return "Cochera";
+        break;
+
+      default:
+        break;
+    }
+  }
+  
 
   const check = () => {
     if(checkUser()) {
@@ -49,13 +89,13 @@ const Appraisals = (props) => {
             <th>Id</th>
             <th>Nombre</th>
             <th>Email</th>
-            <th>Telefono</th>
+            <th>Teléfono</th>
             <th>Horario de contacto</th>
-            <th>Direccion</th>
+            <th>Dirección</th>
             <th>Operación</th>
             <th>Tipo de propiedad</th>
             <th>Ambientes</th>
-            <th>Garage</th>
+            <th>Garaje</th>
             <th>Sup.cubierta</th>
             <th>Sup. total</th>
             <th>Extra</th>
@@ -71,8 +111,8 @@ const Appraisals = (props) => {
             <td datatype='Telefono'>{consulta.number}</td>
             <td datatype='Horario de contacto'>{consulta.horario}</td>
             <td datatype='Direccion'>{consulta.direccion}</td>
-            <td datatype='Operacion'>{consulta.operacion}</td>
-            <td datatype='Tipo de propiedad'>{consulta.tipoPropiedad}</td>
+            <td datatype='Operacion'>{parseOperacion(consulta.operacion)}</td>
+            <td datatype='Tipo de propiedad'>{parseCategoria(consulta.tipoPropiedad)}</td>
             <td datatype='Ambientes'>{consulta.ambiantes}</td>
             <td datatype='Garage'>{consulta.garage}</td>
             <td datatype='Sup. cubierta (m2)'>{consulta.supCubiertam2}</td>
@@ -84,7 +124,6 @@ const Appraisals = (props) => {
               </button>
             </td>
           </tr>
-
 
           ))}
 

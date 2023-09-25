@@ -37,7 +37,7 @@
 
 #navlist li a:hover,
 #navlist li a.active {
-    color: #15297c;
+    color: #000;
 }
 
 #navlist li a:hover::after,
@@ -45,7 +45,7 @@
     content: "";
     width: 30%;
     height: 2px;
-    background-color: #1b2430;
+    background-color: #000;
     position: absolute;
     bottom: -4px;
     left: 20px;
@@ -88,7 +88,7 @@
         align-items: flex-start;
         justify-content: flex-start;
         position: fixed;
-        top: 90px;
+        top: 75px;
         right: -300px;
         width: 300px;
         height: 100vh;

@@ -21,7 +21,7 @@ const AdminLogin = () => {
   const login = async () => {
     await axios
       .post(`${store.getState().api}/login`, {
-        // LUCAS
+        
         email: email,
         password: password,
       })
@@ -30,19 +30,6 @@ const AdminLogin = () => {
           alert(response.data.error);
           return;
         }
-
-        // Recepcion del token
-        // Guardar token en store global
-
-
-        /*
-        setTimeout(() => {
-          let endTime = new Date();
-          let timeElapsed = endTime - startTime;
-
-        }, 1000);
-        */
-
 
           alert("Inicio de sesion correcto");
 
@@ -54,7 +41,6 @@ const AdminLogin = () => {
           let startTime = Date.now();
           store.dispatch(setLoginTime(startTime));
 
-          //navigate('/admin-nav');
           location.href = "/";
       });
   };

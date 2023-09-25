@@ -1,29 +1,19 @@
-section {
+.properties__section {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+
+    margin-left: 9%;
 }
 
 .filter__widget select {
     margin: 0 25px;
     padding: 10px 20px;
-    border: 1px solid linear-gradient(
-        90deg,
-        rgba(67, 151, 239, 1) 0,
-        rgba(2, 227, 211, 1) 100%
-  );
+    border: none;
     cursor: pointer;
     border-radius: 5px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(
-        90deg,
-        #fff,
-        #fff 100%
-  );
-    color: linear-gradient(
-        90deg,
-        rgba(67, 151, 239, 1) 0,
-        rgba(2, 227, 211, 1) 100%
-  );
+    background: #fff;
+    color: #000;
 }
 
 .filter__widget select:focus {
@@ -35,19 +25,18 @@ section {
 }
 
 .search__box {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    border-radius: 10px;
+    
+    width: 30%;
     border: 1px solid linear-gradient(
         90deg,
         rgba(67, 151, 239, 1) 0,
         rgba(2, 227, 211, 1) 100%,
     );
-    border-radius: 2px;
-    padding-right: 100px;
-    padding-left: 100px;
     cursor: pointer;
+
+    margin-top: 1.5em;
+    margin-left: 25px;
 }
 
 .search__box input {
@@ -55,28 +44,33 @@ section {
     background-color: #d6e5fb;
     width: 100%;
     border: none;
-    border-radius: 25px;
+    border-radius: 10px;
     outline: none;
     padding: 10px 15px;
 }
 
-.search__box span {
-    color: linear-gradient(
-        90deg,
-        rgba(67, 151, 239, 1) 0,
-        rgba(2, 227, 211, 1) 100%,
-    );
+@media only screen and (max-width: 900px) {
+    .search__box {
+        padding: 0px 35px;
+    }
 }
 
-
-
 @media only screen and (max-width: 768px) {
+    .properties__section {
+        flex-direction: column;
+    }
+
     .filter__widget {
         margin-bottom: 30px;
+        padding: 0px 10px;
     }
 
     .filter__widget select {
         padding: 7px 20px;
         font-size: 0.9rem;
+    }
+
+    .search__box {
+        padding: 0px 40px;
     }
 }

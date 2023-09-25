@@ -29,10 +29,6 @@ function App() {
     return (<Header></Header>)
   }
 
-  /*
-   let endTime = new Date();
-          let timeElapsed = endTime - startTime;
-  */
 
    useEffect(() => {
       let time = new Date() - store.getState().login_time;
@@ -61,8 +57,8 @@ function App() {
         <Route exact path="/login" element={<AdminLogin/>}/>
         <Route exact path="/addproperties" element={<AddProperties/>}/>
         <Route exact path="/allProperties" element={<AllProperties/>}/>
-        <Route exact path="/queries" element={<Queries/>}/> {/*consultasGente */}
-        <Route exact path="/appraisals" element={<Appraisals/>}/> {/*consultastasaciones */}
+        <Route exact path="/queries" element={<Queries/>}/>
+        <Route exact path="/appraisals" element={<Appraisals/>}/> 
       </Routes>
       <Footer />
     </BrowserRouter>
