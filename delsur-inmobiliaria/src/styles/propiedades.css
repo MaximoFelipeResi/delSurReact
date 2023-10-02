@@ -50,27 +50,41 @@
 }
 
 @media only screen and (max-width: 900px) {
+    .properties__section {
+        display: flex;
+        flex-direction: column;
+        margin-left: 9%;
+    }
+    
+    .filter__widget select {
+        margin: 10px;
+        padding: 10px;
+    }
     .search__box {
-        padding: 0px 35px;
+        width: 400px;
+        padding: 0px 15px;
     }
 }
 
 @media only screen and (max-width: 768px) {
     .properties__section {
         flex-direction: column;
+        margin: auto;
     }
 
     .filter__widget {
-        margin-bottom: 30px;
-        padding: 0px 10px;
+        margin: 0px;
+        padding: 0px 5px;
     }
 
     .filter__widget select {
-        padding: 7px 20px;
-        font-size: 0.9rem;
+        padding: 7px 6px;
+        font-size: 0.8rem;
     }
 
     .search__box {
-        padding: 0px 40px;
+        width: 200px;
+        padding: 0px 8px;
+        font-size: .8rem;
     }
 }

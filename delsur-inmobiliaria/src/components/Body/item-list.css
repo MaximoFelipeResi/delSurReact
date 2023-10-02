@@ -75,10 +75,6 @@
 .filtrosContainer {
     display: flex;
     flex-direction: row;
-
-    .search__box {
-        width: 75%;
-    }
 }
 
 

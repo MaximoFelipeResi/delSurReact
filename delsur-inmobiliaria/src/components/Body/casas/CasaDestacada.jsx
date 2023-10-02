@@ -57,7 +57,7 @@ const CasaDestacada = (data) => {
                 </div>
                 <div className="text-card">
                   <h3>{data.data.titulo}</h3>
-                  <p>{data.data.descripcion}</p>
+                  <p>{data.data.direccion}</p>
                 </div>
                 <button className='btn-watchmore'
                 onClick={()=>{

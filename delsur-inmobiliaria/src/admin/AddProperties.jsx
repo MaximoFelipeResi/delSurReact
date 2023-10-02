@@ -83,7 +83,6 @@ const AddProperties = () => {
   const getImages = ()=>{
     console.log("imagenes :");
     axios.get(endpoint + "/files").then((response)=>{
-      //console.log(response.data);
       setFiles(response.data.archivos);
     })
   }

@@ -43,7 +43,6 @@ const Inicio = () => {
       
       {casas_cards}
     </div>
-    <Pagination/>
     </Helmet>
   </div>
   )

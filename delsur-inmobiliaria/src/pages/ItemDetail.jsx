@@ -188,9 +188,6 @@ const ItemDetail = () => {
               
               
               <div className="icon-details">
-                {/*<span>
-                  <i id="star" class="fa-solid fa-star fa-xl"></i>
-                </span> */}
                 {esDestacado(casa.destacado) !== 1 ? esDestacado(casa.destacado) : null}
                 <span className="text-star">
                  
@@ -287,7 +284,7 @@ const ItemDetail = () => {
                 id="message"
                 cols="30"
                 rows="6"
-                placeholder="¡Hola! Quiero que se comuniquen conmigo por esta propiedad en venta que vi en DelSur."
+                placeholder="¡Hola! Quiero que se comuniquen conmigo por esta propiedad llamada “Colocar el nombre de la propiedad aquí” que vi en DelSur."
                 required
               ></textarea>
 

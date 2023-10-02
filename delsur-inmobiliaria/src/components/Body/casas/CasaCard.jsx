@@ -103,7 +103,7 @@ const casaCard = (data) => {
               <h3 className="rectangle-main">U$D {data.data.precio}</h3>
             </div>
 
-            <p className="excerpt">{data.data.descripcion} </p>
+            <p className="excerpt">{data.data.direccion} </p>
 
             <div className="rectangle-btn" class="button">
               <a
