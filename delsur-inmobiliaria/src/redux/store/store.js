@@ -49,9 +49,13 @@ const authSlice = createSlice({
   initialState: {
     user: null,
     token: null,
-    api: "http://localhost:8000/api",
-    apiFile: "http://localhost:8000/archivos",
-    apiArchivos: "http://localhost:8000/archivos",
+    //api: "http://localhost:8000/api",
+    //apiFile: "http://localhost:8000/archivos",
+    //apiArchivos: "http://localhost:8000/archivos",
+
+    api: "https://backend.inmobiliaria-delsur.com.ar/api",
+
+
     login_time: 0,
     casa: null,
 
@@ -70,6 +74,12 @@ const authSlice = createSlice({
     /*incremented: state => {
       state.value += 1
     }*/
+    setUrls(state, value) {
+      state.api = value.payload.api;
+      state.apiFile = value.payload.apiFile;
+      state.apiArchivos = value.payload.apiFile;
+    },
+
     setAuth(state, value) {
       state.token = value.payload.authorisation;
       state.user = value.payload.user;
@@ -174,6 +184,7 @@ export const {
   setTipoOperacionStore,
   setTipoPropiedadStore,
   setBusquedaPropiedad,
+  setUrls
 } = authSlice.actions;
 export const store = configureStore({
   reducer: persistedReducer,

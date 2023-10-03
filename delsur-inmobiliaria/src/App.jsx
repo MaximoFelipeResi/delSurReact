@@ -17,7 +17,7 @@ import Appraisals from "./admin/Appraisals";
 import ItemDetail from "./pages/ItemDetail";
 import AllProperties from "./admin/AllProperties"
 
-import {store, setAuth} from './redux/store/store';
+import {store, setAuth, setUrls} from './redux/store/store';
 
 
 function App() {
@@ -31,6 +31,15 @@ function App() {
 
 
    useEffect(() => {
+
+      store.dispatch(setUrls({
+        api: "https://backend.inmobiliaria-delsur.com.ar/api",
+        apiFile: "https://backend.inmobiliaria-delsur.com.ar/archivos",
+        apiArchivos: "https://backend.inmobiliaria-delsur.com.ar/archivos",
+        //api: "http://localhost:8001/api"
+      }))
+
+
       let time = new Date() - store.getState().login_time;
       if(time > (1000 * 60)*30) {
         store.dispatch(setAuth({
