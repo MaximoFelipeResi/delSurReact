@@ -41,6 +41,7 @@ const AddProperties = () => {
   const [archivos, setArchivo] =useState(initialValues);
   const [files, setFiles] = useState([]);
 
+
   const fileSelecHandler =(e)=>{
     console.log(e);
     setArchivo({
@@ -57,17 +58,14 @@ const AddProperties = () => {
   const sendFiles = async ()=>{
     let last_id = null;
     await axios.get(`${endpoint}/properties/last`).then((response) => {
-      last_id = response.data.id +1;
+      last_id = response.data.id;
     });
 
-    console.log("LAST_ID", last_id);
     
     let index = 0;
     const fd = new FormData();
 
     for(let archive of archivos.archivos){
-      console.log(archive);
-      
       const filename = `${last_id}_${index}.jpg`;
 
       fd.append('files[]', archive, filename);
@@ -89,14 +87,19 @@ const AddProperties = () => {
 
 
   const getImagesOnSubmit = ()=>{
-    getImages();
     onSubmit();
   }
 
   const Store = async(event)=>{
     event.preventDefault();
+
+    let last_id = null;
+    await axios.get(`${endpoint}/properties/last`).then((response) => {
+      last_id = response.data.id;
+    });
+
     await axios.post(endpoint + "/listproperties",
-    {titulo:titulo, direccion:direccion, descripcion:descripcion,
+    {id: last_id, titulo:titulo, direccion:direccion, descripcion:descripcion,
     m2:m2, totalm2:totalm2, ambientes:ambientes, dormitorios:dormitorios,
     banios:banios, garage:garage, categoria: categoria,
     operacion:operacion, precio:precio,destacado:destacado,map:map });
