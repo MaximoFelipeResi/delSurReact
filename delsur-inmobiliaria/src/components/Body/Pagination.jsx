@@ -9,12 +9,12 @@ const Pagination = (props) => {
 
   const nextPage = () => {
     dispatch(props.target);
-    //dispatch(props.dispatch);
+    dispatch(props.dispatch);
   }
 
   const previousPage = () => {
     dispatch(props.target_b);
-    //dispatch(props.dispatch);
+    dispatch(props.dispatch);
   }
 
   return (

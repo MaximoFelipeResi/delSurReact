@@ -33,6 +33,7 @@ export const getPropiedades = createAsyncThunk(
   async (value, { getState }) => {
     const data = value;
     //const params = value?.params;
+    //console.log("CALLED EXTRA REDUCER");
 
     const response = await axios.post(data.endpoint, {
       page: getState().propiedades_page,
@@ -120,9 +121,14 @@ const authSlice = createSlice({
     increasePage(state, value) {
       // TODO: COMPROBAR QUE NO SE SALGA DE LOS LIMITES
       const data = value.payload;
-      if (state[data.target] >= state[data.target_b]) return;
+      if (state[data.target] >= state[data.target_b]) {
+        return
+      };
+
       state[data.target]++;
-      getPropiedades();
+      
+      // const { dispatch, getState } = store;
+      // dispatch(getPropiedades())
     },
 
     decreasePage(state, value) {
@@ -132,7 +138,8 @@ const authSlice = createSlice({
       if (state[data.target] === 1) return;
       state[data.target]--;
 
-      getPropiedades();
+      // const { dispatch, getState } = store;
+      // dispatch(getPropiedades())
     },
 
     restartPropiedadesPage(state) {
