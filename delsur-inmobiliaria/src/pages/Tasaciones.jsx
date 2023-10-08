@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { store } from '../redux/store/store'
+import { Link } from 'react-router-dom'
 
 import "../styles/tasaciones.css"
 
@@ -184,11 +185,15 @@ const Tasaciones = () => {
           <div className='button__container'>
             <button type='submit' className='button-contact' id='info-btn'>Enviar</button>
           </div>
-        </form>
-       
-      </div>
 
-    </div>
+        </form>
+        
+      </div>
+      
+      
+
+   </div>
+   
   )
 }
 

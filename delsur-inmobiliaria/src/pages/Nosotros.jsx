@@ -18,12 +18,10 @@ const Nosotros = () => {
               <span className='creative'>
                 DelSur
               </span> <br />
-              Propiedades e Inmuebles
+              Propiedades
             </h2>
             <p className='nosotros-info'>
-            <div className="objetivo">
-              Nuestra misión es brindar un servicio profesional y responsable de intermediación en la compra, venta y alquiler de inmuebles, buscando satisfacer al cliente atendiendo, comprendiendo y trabajando sobre sus necesidades inmobiliarias específicas, y aportando valor a los inversores en bienes raíces.
-            </div>
+
             <div className="mision">
               Nuestra misión es brindar un servicio profesional y responsable de intermediación en la compra, venta y alquiler de inmuebles, buscando satisfacer al cliente atendiendo, comprendiendo y trabajando sobre sus necesidades inmobiliarias específicas, y aportando valor a los inversores en  bienes raíces.
             </div>
@@ -42,6 +40,11 @@ const Nosotros = () => {
 
         </section>
       </Helmet>
+      <div className='button-container'>
+              <Link to="https://api.whatsapp.com/send?phone=541151822809&text=&source=&data=&app_absent=" target='blank'>
+                <img className='btn-wsp' src="../src/assets/images/whatsapp-sticky.png" alt="Clickea aquí para contactarnos" />
+              </Link>
+            </div>
     </div>
   )
 }
