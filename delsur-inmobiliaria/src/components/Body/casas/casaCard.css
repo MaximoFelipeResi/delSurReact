@@ -6,7 +6,12 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        cursor: pointer;
     }
+}
+
+.button {
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 1155px) {

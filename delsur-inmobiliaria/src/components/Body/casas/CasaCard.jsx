@@ -108,7 +108,7 @@ const casaCard = (data) => {
 
             <p className="excerpt">{data.data.direccion} </p>
 
-            <div className="rectangle-btn" className="button">
+            <div className="rectangle-btn button">
               <a
                 onClick={() => {
                   store.dispatch(setCasa(data.data));
