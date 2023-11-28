@@ -91,20 +91,20 @@ const ItemList = () => {
   */
 
   const handleTipoPropiedadChange = async (event) => {
-    //setTipoPropiedad(event.target.value);
-    dispatch(setTipoPropiedadStore(event.target.value));
+    //setTipoPropiedad(event?.target?.value);
+    dispatch(setTipoPropiedadStore(event?.target?.value));
     refresh();
   };
 
   const handleFiltroChange = async (event) => {
-    //setFiltro(event.target.value);
-    dispatch(setTipoOperacionStore(event.target.value));
+    //setFiltro(event?.target?.value);
+    dispatch(setTipoOperacionStore(event?.target?.value));
     refresh();
   };
 
   const handleBusquedaChange = async (event) => {
-    //setFiltro(event.target.value);
-    dispatch(setBusquedaPropiedad(event.target.value));
+    //setFiltro(event?.target?.value);
+    dispatch(setBusquedaPropiedad(event?.target?.value));
     //refresh();
   };
 
@@ -148,7 +148,7 @@ const ItemList = () => {
       <section className="properties__section">
         <div className="filtrosContainer">
           <div className="filter__widget">
-            <select value={tipoPropiedad} onChange={handleTipoPropiedadChange}>
+            <select value={tipoPropiedad ?? ""} onChange={handleTipoPropiedadChange}>
               {" "}
               {/*value={tipoPropiedad} onChange={handleTipoPropiedadChange} */}
               <option>Tipo de propiedad</option>
@@ -163,7 +163,7 @@ const ItemList = () => {
           </div>
 
           <div className="filter__widget">
-            <select value={filtro} onChange={handleFiltroChange}>
+            <select value={filtro ?? ""} onChange={handleFiltroChange}>
               <option>Ordenar por</option>
               <option value="0">Venta</option>
               <option value="1">Alquiler</option>

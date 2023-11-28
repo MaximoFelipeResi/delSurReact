@@ -36,7 +36,8 @@ function App() {
         api: "https://backend.inmobiliaria-delsur.com.ar/api",
         apiFile: "https://backend.inmobiliaria-delsur.com.ar/archivos",
         apiArchivos: "https://backend.inmobiliaria-delsur.com.ar/archivos",
-        //api: "http://localhost:8001/api"
+        //apiFile: "http://localhost:8000/archivos",
+        //api: "http://localhost:8000/api"
       }))
 
 

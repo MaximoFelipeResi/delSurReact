@@ -45,8 +45,9 @@ const AdminLogin = () => {
       });
   };
 
+
   return (
-    <section className="login-section">
+    <section className="login-section" id="login">
       <div className="form-box">
         <div className="form-value">
           <form action="">
@@ -64,7 +65,7 @@ const AdminLogin = () => {
                 </svg>
               </span>
               <input
-                className="input-login"
+                className="input-login" id="email"
                 type="text"
                 value={email}
                 onChange={(e) => {
@@ -88,6 +89,7 @@ const AdminLogin = () => {
                 </svg>
               </span>
               <input
+              id="password"
                 className="input-login"
                 type="password"
                 value={password}
@@ -100,11 +102,7 @@ const AdminLogin = () => {
               </label>
             </div>
 
-            <div className="forget">
-              <label className="label-login" htmlFor="">
-                <input className="input-login" type="checkbox" /> Remember Me
-              </label>
-            </div>
+            
 
             <a
               href="javascript:void(0)"

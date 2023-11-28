@@ -32,6 +32,7 @@ export const getPropiedades = createAsyncThunk(
   "auth/getPropiedades",
   async (value, { getState }) => {
     const data = value;
+    getState().propiedades = [];
     //const params = value?.params;
     //console.log("CALLED EXTRA REDUCER");
 
@@ -108,6 +109,7 @@ const authSlice = createSlice({
     */
 
     getPropiedadesDestacadas(state, value) {
+      
       return new Promise((resolve) => {
         const data = value.payload;
         axios
@@ -171,6 +173,8 @@ const authSlice = createSlice({
 
   extraReducers: (builder) => {
     builder.addCase(getPropiedades.fulfilled, (state, action) => {
+      state.propiedades = [];
+
       state.propiedades = action.payload;
       state.total_pages_propiedades = action.payload?.last_page;
     });

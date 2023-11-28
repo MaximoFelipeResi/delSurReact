@@ -7,13 +7,13 @@ import { getPropiedades } from "../../redux/store/store";
 const Pagination = (props) => {
   const dispatch = useDispatch();
 
-  const nextPage = () => {
-    dispatch(props.target);
+  const nextPage = async () => {
+    await dispatch(props.target);
     dispatch(props.dispatch);
   }
 
-  const previousPage = () => {
-    dispatch(props.target_b);
+  const previousPage = async () => {
+    await dispatch(props.target_b);
     dispatch(props.dispatch);
   }
 
@@ -21,11 +21,11 @@ const Pagination = (props) => {
     <div className='pagination-container'>
       <ul className='pages'>
 
-        <a href="javascript:void(0)" onClick={previousPage}>
+        <a onClick={previousPage}>
           <li>Anterior</li>
         </a>
 
-        <a href="javascript:void(0)" onClick={nextPage}>
+        <a onClick={nextPage}>
           <li>Siguiente</li>
         </a>
 

@@ -12,15 +12,18 @@ const casaCard = (data) => {
     
     */
 
+  /*
   useEffect(() => {
     axios
       .post(store.getState().api + "/propertie/images", {
         id: data.data.id,
       })
       .then((response) => {
+        console.log(response.data);
         setImage(response.data.files[0]);
       });
   }, []);
+  */
 
   function parseOperacion(num) {
     switch (num) {
@@ -43,7 +46,7 @@ const casaCard = (data) => {
         <div className="rectangle-card">
           <div className="rectangle-img" id="cardImage" >
             <img
-              src={store.getState().apiArchivos + "/" + image}
+              src={store.getState().apiArchivos + "/" + data.data.images[0]}
               alt="Imagen de la propiedad"
             />
           </div>
@@ -52,42 +55,42 @@ const casaCard = (data) => {
             <div className="rectangle-details">
               <div className="icon-text">
                 <span className="icon">
-                  <i class="fa-solid fa-ruler-vertical"></i>
+                  <i className="fa-solid fa-ruler-vertical"></i>
                 </span>
                 <span className="text"> {data.data.m2} m²</span>
               </div>
 
               <div className="icon-text">
                 <span className="icon">
-                  <i class="fa-solid fa-ruler-combined"></i>
+                  <i className="fa-solid fa-ruler-combined"></i>
                 </span>
                 <span className="text"> {data.data.totalm2} m²</span>
               </div>
 
               <div className="icon-text">
                 <span className="icon">
-                  <i class="fa-solid fa-door-open"></i>
+                  <i className="fa-solid fa-door-open"></i>
                 </span>
                 <span className="text"> {data.data.ambientes}</span>
               </div>
 
               <div className="icon-text">
                 <span className="icon">
-                  <i class="fa-solid fa-bed"></i>
+                  <i className="fa-solid fa-bed"></i>
                 </span>
                 <span className="text"> {data.data.dormitorios}</span>
               </div>
 
               <div className="icon-text">
                 <span className="icon">
-                  <i class="fa-solid fa-bath"></i>
+                  <i className="fa-solid fa-bath"></i>
                 </span>
                 <span className="text"> {data.data.banios}</span>
               </div>
 
               <div className="icon-text">
                 <span className="icon">
-                  <i class="fa-solid fa-warehouse"></i>
+                  <i className="fa-solid fa-warehouse"></i>
                 </span>
                 <span className="text"> {data.data.garage}</span>
               </div>
@@ -105,9 +108,8 @@ const casaCard = (data) => {
 
             <p className="excerpt">{data.data.direccion} </p>
 
-            <div className="rectangle-btn" class="button">
+            <div className="rectangle-btn" className="button">
               <a
-              href="javascript:void(0)"
                 onClick={() => {
                   store.dispatch(setCasa(data.data));
                   location.href = "itemdetail";

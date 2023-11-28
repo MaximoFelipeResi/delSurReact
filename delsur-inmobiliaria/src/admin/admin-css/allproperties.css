@@ -50,6 +50,9 @@
     border-radius: 25px;
     border: 1px solid #dee2e685;
     opacity: 1;
+    margin-top: 12px;
+    margin-right: 35%;
+    margin-bottom: 12px;
     margin-left: 35%;
     padding: 15px;
     display:  flex;

@@ -209,9 +209,9 @@ const ItemDetail = () => {
               src={casa.map}
               width="800"
               height="700"
-              allowfullscreen="false"
+              allowFullScreen="false"
               loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade">
+              referrerPolicy="no-referrer-when-downgrade">
             </iframe>
             <div/>
 
