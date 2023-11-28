@@ -165,8 +165,8 @@
     }
     
     .admin__menu {
-        flex-wrap: wrap;
-        padding: 30px 0;
+        /* flex-wrap: wrap; */
+        padding: 30px 10px;
     }
     
     .admin__menu-list {
@@ -175,9 +175,13 @@
 
     .admin__menu-item {
         font-size: .8rem;
+        text-align: center;
+        display: flex;
+        justify-content: center;
     }
 
     .admin__menu-item a {
+        text-align: center;
         padding: 0px 10px !important;
     }
 }

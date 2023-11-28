@@ -9,11 +9,11 @@ import { useNavigate } from 'react-router-dom';
 
 const admin__nav = [
     {
-        display:'Añadir Props',
+        display:'Añadir Propiedades',
         path:'addproperties',
     },
     {
-      display:'Todas Props',
+      display:'Ver propiedades',
       path:'allproperties'
     },
     {

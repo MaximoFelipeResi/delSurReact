@@ -9,88 +9,77 @@ import "./admin-css/addproperties.css";
 
 import { checkUser } from "../utils/user";
 
-
 const initialValues = {
-  archivos : null,
-  archivosnombre : '',
-  archivoURL : ''
-}
+  archivos: null,
+  archivosnombre: "",
+  archivoURL: "",
+};
 const AddProperties = () => {
-
   const endpoint = store.getState().api;
   const endpointFile = store.getState().apiFile;
 
-  const [titulo, setTitulo]= useState('');
-  const [direccion, setDireccion]= useState('');
-  const [descripcion, setDescripcion]= useState('');
-  const [m2, setM2]= useState('');
-  const [totalm2, setTotalm2]= useState('');
-  const [ambientes, setAmbientes]= useState('');
-  const [dormitorios, setDormitorios]= useState('');
-  const [banios, setBanios]= useState('');
-  const [garage, setGarage]= useState('');
-  const [categoria, setCategoria]= useState('');
-  const [operacion, setOperacion]= useState('');
-  const [precio, setPrecio]= useState('');
-  const [map, setMap]= useState('');
-  const [destacado, setDestacado]= useState('');
+  const [titulo, setTitulo] = useState("");
+  const [direccion, setDireccion] = useState("");
+  const [descripcion, setDescripcion] = useState("");
+  const [m2, setM2] = useState("");
+  const [totalm2, setTotalm2] = useState("");
+  const [ambientes, setAmbientes] = useState("");
+  const [dormitorios, setDormitorios] = useState("");
+  const [banios, setBanios] = useState("");
+  const [garage, setGarage] = useState("");
+  const [categoria, setCategoria] = useState("");
+  const [operacion, setOperacion] = useState("");
+  const [precio, setPrecio] = useState("");
+  const [map, setMap] = useState("");
+  const [destacado, setDestacado] = useState("");
   const navigate = useNavigate();
- 
-// FILES  
-  
-  const [archivos, setArchivo] =useState(initialValues);
+
+  // FILES
+
+  const [archivos, setArchivo] = useState(initialValues);
   const [files, setFiles] = useState([]);
 
-
-  const fileSelecHandler =(e)=>{
+  const fileSelecHandler = (e) => {
     console.log(e);
     setArchivo({
-      archivos : e.target.files,
-      
+      archivos: e.target.files,
     });
-    
-  }
+  };
 
-  const onSubmit =()=>{
-
+  const onSubmit = () => {
     sendFiles();
-  }
-  const sendFiles = async ()=>{
+  };
+  const sendFiles = async () => {
     let last_id = null;
     await axios.get(`${endpoint}/properties/last`).then((response) => {
       last_id = response.data.id;
     });
 
-    
     let index = 0;
     const fd = new FormData();
 
-    for(let archive of archivos.archivos){
+    for (let archive of archivos.archivos) {
       const filename = `${last_id}_${index}.jpg`;
 
-      fd.append('files[]', archive, filename);
+      fd.append("files[]", archive, filename);
       index++;
-
     }
 
-    axios.post(endpoint + "/upload", fd).then((res)=>{
-    });
-  
-  }
+    axios.post(endpoint + "/upload", fd).then((res) => {});
+  };
 
-  const getImages = ()=>{
+  const getImages = () => {
     console.log("imagenes :");
-    axios.get(endpoint + "/files").then((response)=>{
+    axios.get(endpoint + "/files").then((response) => {
       setFiles(response.data.archivos);
-    })
-  }
+    });
+  };
 
-
-  const getImagesOnSubmit = ()=>{
+  const getImagesOnSubmit = () => {
     onSubmit();
-  }
+  };
 
-  const Store = async(event)=>{
+  const Store = async (event) => {
     event.preventDefault();
 
     let last_id = null;
@@ -98,13 +87,25 @@ const AddProperties = () => {
       last_id = response.data.id;
     });
 
-    await axios.post(endpoint + "/listproperties",
-    {id: last_id, titulo:titulo, direccion:direccion, descripcion:descripcion,
-    m2:m2, totalm2:totalm2, ambientes:ambientes, dormitorios:dormitorios,
-    banios:banios, garage:garage, categoria: categoria,
-    operacion:operacion, precio:precio,destacado:destacado,map:map });
-    navigate('/');
-  }
+    await axios.post(endpoint + "/listproperties", {
+      id: last_id,
+      titulo: titulo,
+      direccion: direccion,
+      descripcion: descripcion,
+      m2: m2,
+      totalm2: totalm2,
+      ambientes: ambientes,
+      dormitorios: dormitorios,
+      banios: banios,
+      garage: garage,
+      categoria: categoria,
+      operacion: operacion,
+      precio: precio,
+      destacado: destacado,
+      map: map,
+    });
+    navigate("/");
+  };
 
   if (!checkUser()) {
     location.href = "/";
@@ -115,8 +116,8 @@ const AddProperties = () => {
       return (
         <div>
           <Helmet title="Agregar Propiedades">
-            <form className="add-form"  onSubmit={Store}>
-              <h2 className='title-featuredprop'>Agregar Propiedades</h2>
+            <form className="add-form" onSubmit={Store}>
+              <h2 className="title-featuredprop">Agregar Propiedades</h2>
 
               <div className="addform-container">
                 <div className="form__group">
@@ -130,7 +131,7 @@ const AddProperties = () => {
                     name="title"
                     value={titulo}
                     placeholder="Titulo"
-                    onChange={(e)=>setTitulo(e.target.value)}
+                    onChange={(e) => setTitulo(e.target.value)}
                     required
                   />
                 </div>
@@ -145,7 +146,7 @@ const AddProperties = () => {
                     id="direction"
                     name="direction"
                     value={direccion}
-                    onChange={(e)=>setDireccion(e.target.value)}
+                    onChange={(e) => setDireccion(e.target.value)}
                     placeholder="Direccion"
                     required
                   />
@@ -161,7 +162,7 @@ const AddProperties = () => {
                     id="description"
                     name="description"
                     value={descripcion}
-                    onChange={(e)=>setDescripcion(e.target.value)}
+                    onChange={(e) => setDescripcion(e.target.value)}
                     val
                     placeholder="Descripcion..."
                     required
@@ -178,7 +179,7 @@ const AddProperties = () => {
                     id="m2"
                     name="m2"
                     value={m2}
-                    onChange={(e)=>setM2(e.target.value)}
+                    onChange={(e) => setM2(e.target.value)}
                     placeholder="0"
                     required
                   />
@@ -194,7 +195,7 @@ const AddProperties = () => {
                     id="totalm2"
                     name="totalm2"
                     value={totalm2}
-                    onChange={(e)=>setTotalm2(e.target.value)}
+                    onChange={(e) => setTotalm2(e.target.value)}
                     placeholder="0"
                     required
                   />
@@ -210,7 +211,7 @@ const AddProperties = () => {
                     id="environments"
                     name="environments"
                     value={ambientes}
-                    onChange={(e)=>setAmbientes(e.target.value)}
+                    onChange={(e) => setAmbientes(e.target.value)}
                     placeholder="0"
                     required
                   />
@@ -226,7 +227,7 @@ const AddProperties = () => {
                     id="bedrooms"
                     name="bedrooms"
                     value={dormitorios}
-                    onChange={(e)=>setDormitorios(e.target.value)}
+                    onChange={(e) => setDormitorios(e.target.value)}
                     placeholder="0"
                     required
                   />
@@ -242,7 +243,7 @@ const AddProperties = () => {
                     id="bathroom"
                     name="bathroom"
                     value={banios}
-                    onChange={(e)=>setBanios(e.target.value)}
+                    onChange={(e) => setBanios(e.target.value)}
                     placeholder="0"
                     required
                   />
@@ -258,7 +259,7 @@ const AddProperties = () => {
                     id="garage"
                     name="garage"
                     value={garage}
-                    onChange={(e)=>setGarage(e.target.value)}
+                    onChange={(e) => setGarage(e.target.value)}
                     placeholder="0"
                     required
                   />
@@ -273,12 +274,10 @@ const AddProperties = () => {
                     id="map"
                     name="map"
                     value={map}
-                    onChange={(e)=>setMap(e.target.value)}
+                    onChange={(e) => setMap(e.target.value)}
                     placeholder="map"
                   />
                 </div>
-
-                
 
                 <div className="form__group">
                   <label className="add-label" for="price">
@@ -290,28 +289,28 @@ const AddProperties = () => {
                     id="price"
                     name="price"
                     value={precio}
-                    onChange={(e)=>setPrecio(e.target.value)}
+                    onChange={(e) => setPrecio(e.target.value)}
                     placeholder="$1000"
                     required
                   />
                 </div>
-                <div className='form__group'
-                value={destacado}
-                onChange={(e)=>setDestacado(e.target.value)}
+                <div
+                  className="form__group"
+                  value={destacado}
+                  onChange={(e) => setDestacado(e.target.value)}
                 >
-                      <h4>Propiedad Destacada</h4>
-                      <select>
-                        <option>Seleccionar opcion</option>
-                            <option value="1">Si</option>  
-                            <option value="0">No</option>
-                      </select> 
-                  </div>
-                
+                  <h4>Propiedad Destacada</h4>
+                  <select>
+                    <option>Seleccionar opcion</option>
+                    <option value="1">Si</option>
+                    <option value="0">No</option>
+                  </select>
+                </div>
 
-              
-                <div className="form__group"
-                value={categoria}
-                onChange={(e)=>setCategoria(e.target.value)}
+                <div
+                  className="form__group"
+                  value={categoria}
+                  onChange={(e) => setCategoria(e.target.value)}
                 >
                   <h4>Tipo de propiedad</h4>
                   <select>
@@ -326,52 +325,68 @@ const AddProperties = () => {
                   </select>
                 </div>
 
-                <div className="form__group"
-                value={operacion}
-                onChange={(e)=>setOperacion(e.target.value)}
+                <div
+                  className="form__group"
+                  value={operacion}
+                  onChange={(e) => setOperacion(e.target.value)}
                 >
                   <h4>Operación</h4>
                   <select>
                     <option>Seleccionar tipo</option>
-                    <option value= "0" >Venta</option>
+                    <option value="0">Venta</option>
                     <option value="1">Alquiler</option>
                   </select>
                 </div>
 
-                        <div className='file-wrapper'>
-                            <h3 className='img-file'>Imágenes</h3>
-                            <input className="addfile-input" onChange={fileSelecHandler} multiple type="file" id='upload' hidden required />   
-                            <label className="addfile-label" for="upload">
-                                <span><i class="fa-solid fa-cloud-arrow-up"></i></span>
-                                <p>Click para subir archivo</p>
-                            </label>
-                  <div id='filewrapper'>
-                            <h3 className='uploaded'>Documentos subidos</h3>
-                            <div className="showfilebox">
-                                <div className="left-file">
-                              
-                                    <div className='image-grid'>
-                                      {files.map((file, index) => (  // solucionar problema de la URL
-                                      <img key={index} src={`${endpointFile}/archivos/${file}`} alt={`Imagen ${index}`}/>
-                                      
-                                      ))}
-                                    </div>
-                                    <div>
-                                    
-                                    </div>
-                                       
-                                </div>
-                                
-                            </div>
+                <div className="file-wrapper">
+                  <h3 className="img-file">Imágenes</h3>
+                  <input
+                    className="addfile-input"
+                    onChange={fileSelecHandler}
+                    multiple
+                    type="file"
+                    id="upload"
+                    hidden
+                    required
+                  />
+                  <label className="addfile-label" for="upload">
+                    <span>
+                      <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </span>
+                    <p>Click para subir archivo</p>
+                  </label>
+                  <div id="filewrapper">
+                    <h3 className="uploaded">Documentos subidos</h3>
+                    <div className="showfilebox">
+                      <div className="left-file">
+                        <div className="image-grid">
+                          {files.map(
+                            (
+                              file,
+                              index // solucionar problema de la URL
+                            ) => (
+                              <img
+                                key={index}
+                                src={`${endpointFile}/archivos/${file}`}
+                                alt={`Imagen ${index}`}
+                              />
+                            )
+                          )}
                         </div>
+                        <div></div>
                       </div>
-               
-                <button className="add-btn" onClick={getImagesOnSubmit} type="submit">
+                    </div>
+                  </div>
+                </div>
+
+                <button
+                  className="add-btn"
+                  onClick={getImagesOnSubmit}
+                  type="submit"
+                >
                   Añadir Propiedad
                 </button>
-
               </div>
-              
             </form>
           </Helmet>
         </div>
