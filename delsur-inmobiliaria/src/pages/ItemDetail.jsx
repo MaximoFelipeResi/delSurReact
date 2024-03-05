@@ -1,4 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React,{
+  useEffect,
+  useRef,
+  useState
+} from "react";
 import axios from "axios";
 import { store } from "../redux/store/store";
 import ImageGrid from "../components/Body/casas/ImageGrid";
@@ -52,7 +56,7 @@ const ItemDetail = () => {
       case 1 : 
         return (
           <span>
-            <i id="star" class="fa-solid fa-star fa-xl"></i>
+            <i id="star" className="fa-solid fa-star fa-xl"></i>
           </span>
         ) ;
 
@@ -102,6 +106,7 @@ const ItemDetail = () => {
 
       case 6:
         return "Cochera";
+
         break;
 
       default:
