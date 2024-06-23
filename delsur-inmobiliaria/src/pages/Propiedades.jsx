@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 
@@ -10,12 +10,35 @@ import Pagination from '../components/Body/Pagination'
 import "../styles/propiedades.css"
 
 const Propiedades = () => {
+
+  const [categoria, setCategoria] = useState(''); // Estado para la categoría seleccionada
+  const [orden, setOrden] = useState(''); // Estado para el orden seleccionado
+  const [busqueda, setBusqueda] = useState(''); // Estado para el texto de búsqueda
+
+  // Función para manejar el cambio en la selección de categoría
+  const handleCategoriaChange = (e) => {
+    setCategoria(e.target.value);
+  };
+
+  // Función para manejar el cambio en la selección de orden
+  const handleOrdenChange = (e) => {
+    setOrden(e.target.value);
+  };
+
+  // Función para manejar el cambio en el input de búsqueda
+  const handleBusquedaChange = (e) => {
+    setBusqueda(e.target.value);
+  };
+
+  // Aquí puedes utilizar los valores de categoria, orden y busqueda para filtrar tus propiedades
+  // por ejemplo, haciendo una llamada a una API o filtrando un arreglo de propiedades en memoria.
+
   return (
     <Helmet title="Propiedades e Inmuebles">
         <CommonSection title="Propiedades"/>
             <section className='properties__section'>
             <div className="filter__widget">
-              <select>
+              <select onChange={handleCategoriaChange} value={categoria}>
                 <option>Tipo de propiedad</option>
                   <option value="casa">Casa</option>
                   <option value="departamento">Departamento</option>
@@ -28,7 +51,7 @@ const Propiedades = () => {
             </div>
 
               <div className="filter__widget">
-                <select>
+                <select onChange={handleOrdenChange} value={orden}>
                 <option>Ordenar por</option>
                   <option value="venta">Venta</option>
                   <option value="alquiler">Alquiler</option>
@@ -36,7 +59,7 @@ const Propiedades = () => {
               </div>
 
               <div className="search__box">
-                <input type="text" placeholder='Buscar...'/>
+                <input type="text" placeholder='Buscar...' value={busqueda} onChange={handleBusquedaChange}/>
               </div>
             </section>          
               

@@ -37,7 +37,7 @@ const Contacto = () => {
             </div>
 
             <div className='form-content'>
-              <label className='contact-label'for="phone">Telefono</label>
+              <label className='contact-label'for="phone">Teléfono</label>
               <input className='contact-input' type="tel" id='phone' name='phone' placeholder='Telefono' required/>
             </div>
             

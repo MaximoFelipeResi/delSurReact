@@ -1,58 +1,48 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react';
 
 import {initLightboxJS} from 'lightbox.js-react'
 
+//import 'lightbox2/dist/js/lightbox.min.js';
+//import 'lightbox2/dist/css/lightbox.min.css';
 import "../styles/item-detail.css"
 
 const ItemDetail = () => {
-  /*
-  lightbox.option({
-    'resizeDuration': 200,
-    'wrapAround': true,
-    'disableScrolling': true,
-})*/
 
+  const images = [
+    { id: 1, src: '../src/assets/images/cafefondo1.jpg', alt: 'Descripción de la imagen 1', fullSrc: '../src/assets/images/cafefondo1.jpg' },
+    { id: 2, src: '../src/assets/images/casa.jpg', alt: 'Descripción de la imagen 2', fullSrc: '../src/assets/images/casa.jpg' },
+    { id: 3, src: '../src/assets/images/casa1.jpg', alt: 'Descripción de la imagen 3', fullSrc: '../src/assets/images/casa1.jpg' },
+    { id: 4, src: '../src/assets/images/casa2.jpg"', alt: 'Descripción de la imagen 4', fullSrc: '../src/assets/images/casa2.jpg"' },
+    { id: 5, src: '../src/assets/images/comprar_casa.jpg', alt: 'Descripción de la imagen 5', fullSrc: '../src/assets/images/comprar_casa.jpg' },
+    { id: 6, src: '../src/assets/images/nosotros-imagen.jpg', alt: 'Descripción de la imagen 6', fullSrc: '../src/assets/images/nosotros-imagen.jpg' },
+    // Agregar más imágenes según sea necesario
+  ];
+  
+
+  useEffect(() => {
+
+    const lightbox = window.lightbox;
+
+    if (lightbox) {
+      lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true,
+        'disableScrolling': true,
+      });
+    }
+  }, []);
 
   return (
     <div className='itemdetail'>
       <div className="itemdetail-container">
 
         <div className="grid-gallery">
-
           <div className='grid-item'>
-            <a href="../src/assets/images/cafefondo1.jpg" data-lightbox="gridImage">
-              <img src="../src/assets/images/cafefondo1.jpg" alt="" />
+          {images.map((image) => (
+            <a href={image.fullSrc} data-lightbox="gridImage" data-title={image.alt} key={image.id}>
+              <img src={image.src} alt={image.alt} />
             </a>
-          </div>
-
-          <div className='grid-item'>
-            <a href="../src/assets/images/casa.jpg" data-lightbox="gridImage">
-              <img src="../src/assets/images/casa.jpg" alt="" />
-            </a>
-          </div>
-
-          <div className='grid-item'>
-            <a href="../src/assets/images/casa1.jpg" data-lightbox="gridImage">
-              <img src="../src/assets/images/casa1.jpg" alt="" />
-            </a>
-          </div>
-
-          <div className='grid-item'>
-            <a href="../src/assets/images/casa2.jpg" data-lightbox="gridImage">
-              <img src="../src/assets/images/casa2.jpg" alt="" />
-            </a>
-          </div>
-
-          <div className='grid-item'>
-            <a href="../src/assets/images/comprar_casa.jpg" data-lightbox="gridImage">
-              <img src="../src/assets/images/comprar_casa.jpg" alt="" />
-            </a>
-          </div>
-          
-          <div className='grid-item'>
-            <a href="../src/assets/images/nosotros-imagen.jpg" data-lightbox="gridImage">
-              <img src="../src/assets/images/nosotros-imagen.jpg" alt="" />
-            </a>
+          ))}
           </div>
 
         </div>

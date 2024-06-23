@@ -8,7 +8,7 @@ const AllProperties = () => {
   return (
     <div className='allproperties-container'>
 
-        <h2>Todas las Propiedades</h2>
+        <h2 className='title-featuredprop'>Todas las Propiedades</h2>
         <br />
         <div className="table-properties">
         <table className='all-table'>

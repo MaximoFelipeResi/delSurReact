@@ -19,16 +19,24 @@ article.card {
     margin: 25px 25px;
     max-width: 350px;
     background: #f8f8f8;
-    border-radius: 8;
+    border-radius: 8px;
     box-shadow: 0 0 12px #d7d7d7;
+    transition: transform 0.3s ease;
+}
+
+article.card:hover {
+    transform: translateY(-5px);
 }
 
 .header-card {
-    margin: 20px 8px;
+    margin: 0px !important;
+    padding: 0px !important;
 }
 
 .header-card img {
-    border-radius: 8px 8px 0 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 0;
 } 
 
 .category-card {
@@ -76,23 +84,6 @@ article.card {
     height: 70px;
     width: 70px; 
 }
-
-.swiper {
-    max-width: 300px;
-    max-height: 300px;
-    position: absolute;
-  }
-  
-  .swiper-slide {
-    background-position: center;
-    background-size: cover;
-  }
-  
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-  }
-  
 
   @media only screen and (max-width: 1396px) {
         .featured-properties {

@@ -6,9 +6,9 @@ const CommonSection = ({ title }) => {
   return (
     <section className="common__section">
       <Container className="text-center">
-        <br /> <br /> <br />
+        <br /> <br /> <br /><br /><br />
         <h1>{title}</h1>
-        <br /> <br /> <br />
+        <br /> <br /> <br /><br /><br />
       </Container>
     </section>
   )

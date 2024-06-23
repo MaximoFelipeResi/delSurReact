@@ -21,9 +21,7 @@ const Nosotros = () => {
               Propiedades e Inmuebles
             </h2>
             <p className='nosotros-info'>
-            <div className="objetivo">
-              Nuestra misión es brindar un servicio profesional y responsable de intermediación en la compra, venta y alquiler de inmuebles, buscando satisfacer al cliente atendiendo, comprendiendo y trabajando sobre sus necesidades inmobiliarias específicas, y aportando valor a los inversores en bienes raíces.
-            </div>
+            
             <div className="mision">
               Nuestra misión es brindar un servicio profesional y responsable de intermediación en la compra, venta y alquiler de inmuebles, buscando satisfacer al cliente atendiendo, comprendiendo y trabajando sobre sus necesidades inmobiliarias específicas, y aportando valor a los inversores en  bienes raíces.
             </div>
