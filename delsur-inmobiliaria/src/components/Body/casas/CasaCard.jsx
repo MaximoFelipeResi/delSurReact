@@ -110,7 +110,7 @@ const casaCard = (data) => {
             <p className="excerpt">{data.data.direccion} </p>
 
             <div className="rectangle-btn button">
-              <a
+              <a title="Ver más detalles de la propiedad"
                 onClick={() => {
                   store.dispatch(setCasa(data.data));
                   location.href = "itemdetail";

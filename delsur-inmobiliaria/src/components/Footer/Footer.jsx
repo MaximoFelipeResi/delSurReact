@@ -21,7 +21,7 @@ const Footer = () => {
 
       <div>
         <h2 className='link-title'>Links</h2>
-          <ul>
+          <ul className='ul-footer-links'>
             <Link to="propiedades">
               <li className='menu-item'>Propiedades</li>
             </Link>

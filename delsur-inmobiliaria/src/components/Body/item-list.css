@@ -64,13 +64,19 @@
     align-items: center;
 }
 
-.button {
+.rectangle-btn {
     margin: 1rem 0;
-    padding: 1.2rem 3rem;
+    padding: .9rem 1.8rem;
     display: inline-block;
     background-color: #123456;
     color: #fff;
+    font-weight: 700;
     border-radius: 0.6rem;
+    transition: all 0.2s ease-in;
+}
+
+.rectangle-btn:hover {
+    background-color: #2E77C7;
 }
 
 .filtrosContainer {
