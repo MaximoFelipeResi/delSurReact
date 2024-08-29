@@ -14,7 +14,7 @@ class Header extends Component {
     <>
       <nav className='nav-bar'>
         <a href="/">
-          <img className='logo' src="../src/assets/images/logo.jpg" alt="Logo"/>
+          <img className='logo' src="../src/assets/images/logo.jpg" alt="Logo Del Sur Inmobiliaria" title="Logo Del Sur Inmobiliaria"/>
         </a>
 
         <div>

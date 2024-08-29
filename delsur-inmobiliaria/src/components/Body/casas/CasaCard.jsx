@@ -47,7 +47,8 @@ const casaCard = (data) => {
           <div className="rectangle-img" id="cardImage" >
             <img
               src={store.getState().apiArchivos + "/" + data?.data?.images?.[0]}
-              alt="Imagen de la propiedad"
+              alt={data.data.titulo}
+              title={data.data.titulo}
             />
           </div>
 

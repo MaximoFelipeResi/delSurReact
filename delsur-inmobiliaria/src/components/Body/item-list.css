@@ -6,7 +6,7 @@
 .rectangle-card {
     display: flex;
     background-color: #fff;
-    border-radius: 1rem;
+    border-radius: 18px;
     box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.28);
 }
 
@@ -49,8 +49,9 @@
 
 .rectangle-state {
     margin: 25px 10px;
-    background-color: #25c4d8;   
+    background-color: #008485;   
     color: #fff;
+    font-weight: 500;
     padding: .2rem .5rem;
     border-radius: 4px;
 }

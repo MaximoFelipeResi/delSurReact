@@ -47,7 +47,7 @@ const CasaDestacada = (data) => {
               <div className='header-card'>
                 <Swiper>
             <SwiperSlide>
-              <img src={store.getState().apiArchivos + "/" + image} />
+              <img src={store.getState().apiArchivos + "/" + image} alt={data.data.titulo} title={data.data.titulo}/>
             </SwiperSlide>
                 </Swiper>
               </div>
@@ -60,6 +60,7 @@ const CasaDestacada = (data) => {
                   <p>{data.data.direccion}</p>
                 </div>
                 <button className='btn-watchmore'
+                title='Ver detalle de la propiedad'
                 onClick={()=>{
                     store.dispatch(setCasa(data.data));
                     location.href = "itemdetail";
