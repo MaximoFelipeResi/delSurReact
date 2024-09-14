@@ -1,6 +1,5 @@
 .allproperties-container {
     margin: 150px 100px;
-
 }
 
 .table-properties {
@@ -63,7 +62,6 @@
 @media only screen and (max-width: 810px) {
     .allproperties-container {
         margin: 150px 20px;
-    
     }
     .all-thead .all-th {
         font-size: 12px;
