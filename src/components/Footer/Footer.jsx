@@ -38,7 +38,7 @@ const Footer = () => {
       </div>
 
       <iframe className='maps' title='Ubicación Del Sur Inmobiliaria' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.992631351957!2d-58.17429965416357!3d-34.88153134631936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2d9ce90a49991%3A0x3f74384004a41188!2sDel%20Sur%20Inmobiliaria!5e0!3m2!1ses!2sar!4v1691772175516!5m2!1ses!2sar" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-      <p className="footer__copyright">&copy; {year} developed by Máximo Felipe Resi & Martín Catalano Resi. All rights reserved.</p>
+      <p className="footer__copyright">&copy; {year} developed by <a className="corpresi" href="https://corpresi.com/" target="_blank" rel="noopener noreferrer">Resi Corporation - Programadores</a>. All rights reserved.</p>
     </div>
   )
 }

@@ -113,3 +113,8 @@
     text-align: center;
 }
 
+.corpresi:hover {
+    color: rgb(199, 0, 57);
+    text-decoration: underline;
+    transition: color 0.3s ease-in-out;
+}
