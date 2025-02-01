@@ -53,7 +53,7 @@ body {
 }
 
 .right {
-    background: url(../assets/images/nosotros-imagen.jpg);
+    background: url("/images/nosotros-imagen.jpg");
     background-size: cover;
     background-position: center;
     height: 100vh;

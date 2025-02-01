@@ -42,7 +42,7 @@ const Propiedades = () => {
 
             <div className='button-container'>
               <Link to="https://api.whatsapp.com/send?phone=541151822809&text=&source=&data=&app_absent=" target='blank'>
-                <img className='btn-wsp' src="../src/assets/images/whatsapp-sticky.png" alt="Whatsapp Del Sur Inmobiliaria" title="Whatsapp Del Sur Inmobiliaria"/>
+                <img className='btn-wsp' src="/images/whatsapp-sticky.png" alt="Whatsapp Del Sur Inmobiliaria" title="Whatsapp Del Sur Inmobiliaria"/>
               </Link>
             </div>
     </Helmet>
