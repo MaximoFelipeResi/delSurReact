@@ -9,7 +9,7 @@ const Footer = () => {
   const year = new Date().getFullYear()
   return (
     <div className='footer'>
-      <Avatar size="x2" src="/images/logo.png" alt="Logo Del Sur Inmobiliaria" title="Logo Del Sur Inmobiliaria"/>
+      <Avatar size="x2" src="/images/logo2.png" alt="Logo Del Sur Inmobiliaria" title="Logo Del Sur Inmobiliaria"/>
       <div className='main-social-icons-container'>
         <h2 className='link-title'>Redes sociales:</h2>
         <div className='social-icons-container'>
