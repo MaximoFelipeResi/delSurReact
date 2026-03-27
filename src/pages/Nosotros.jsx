@@ -35,8 +35,8 @@ const Nosotros = () => {
             <div className="image-frame">
               <img src="/images/nosotros-imagen.jpg" alt="Equipo Del Sur" />
               <div className="experience-badge">
-                <strong>25+</strong>
-                <span>Años de Experiencia</span>
+                <strong>30+</strong>
+                <span>Años de Trayectoria</span>
               </div>
             </div>
           </div>

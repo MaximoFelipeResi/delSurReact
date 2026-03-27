@@ -37,7 +37,7 @@ const Contacto = () => {
     <h2>Contactanos</h2>
     <p>
       Colectora 11444, C.A. El Pato, Berazategui 1893. <br />
-      <span>011 5182-2809 | 02229 491725</span>
+      <span>11 5182-2809 (Martín) | 11 5729-7853 (Paula)</span>
     </p>
   </div>
 
