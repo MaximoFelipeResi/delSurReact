@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import "../Header/header.css"
+import "./header.css"
 
 class Header extends Component {
 
@@ -14,7 +14,7 @@ class Header extends Component {
     <>
       <nav className='nav-bar'>
         <a href="/">
-          <img className='logo' src="/images/logo.jpg" alt="Logo Del Sur Inmobiliaria" title="Logo Del Sur Inmobiliaria"/>
+          <img className='logo' src="/images/logo-scirc.png" alt="Logo Del Sur Inmobiliaria" title="Logo Del Sur Inmobiliaria"/>
         </a>
 
         <div>

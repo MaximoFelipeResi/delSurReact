@@ -14,6 +14,11 @@
     align-items: center;
 }
 
+.logo-footer {
+    height: 80px;
+    width: fit-content;
+}
+
 .logo {
     height: 80px;
     width: fit-content;

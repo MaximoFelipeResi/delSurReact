@@ -1,4 +1,6 @@
-.nav-bar{
+/* header.css */
+
+.nav-bar {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -21,18 +23,47 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    list-style: none; /* Quitamos los puntos de lista por si acaso */
+    margin: 0;
+    padding: 0;
 }
 
 #navlist li {
-    color: #1074C1;
     padding: 0 20px;
     position: relative;
 }
 
+/* --- ESTILOS DEL LINK CON ANIMACIÓN --- */
+
 #navlist li a {
+    text-decoration: none;
+    color: #1074C1;
     font-size: 1.2rem;
     font-weight: 600;
-    transition: 0.3s ease-in-out;
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* El "subrayado" invisible inicial */
+#navlist li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px; /* Ajusta qué tan cerca del texto está la línea */
+    left: 50%;    /* Empezamos en el centro */
+    background-color: #000;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+/* Animación al pasar el mouse (Hover) y estado Activo */
+#navlist li a:hover::after,
+#navlist li a.active::after {
+    visibility: visible;
+    width: 50%;
 }
 
 #navlist li a:hover,
@@ -40,16 +71,7 @@
     color: #000;
 }
 
-#navlist li a:hover::after,
-#navlist li a.active::after {
-    content: "";
-    width: 30%;
-    height: 2px;
-    background-color: #000;
-    position: absolute;
-    bottom: -4px;
-    left: 20px;
-}
+/* --- RESPONSIVE --- */
 
 #mobile {
     display: none;
@@ -57,12 +79,13 @@
 
 #mobile i {
     color: black;
-    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
 }
 
-@media screen and (max-width: 991px){
+@media screen and (max-width: 991px) {
     #navlist li {
-        padding: 0 6px;
+        padding: 0 10px;
     }
 
     #navlist li a {
@@ -74,12 +97,7 @@
 @media screen and (max-width: 769px) {
     .nav-bar {
         padding: 10px 40px;
-        justify-content: space-around;
-    }
-
-    .logo {
-        max-width: 175px;
-        max-height: 75px;
+        justify-content: space-between; /* Mejor para mobile */
     }
 
     #navlist {
@@ -92,11 +110,10 @@
         right: -300px;
         width: 300px;
         height: 100vh;
-        background: #e5e5e5;
-        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
-        margin-top: 21px;
-        padding: 40px 0 0 10px;
-        transition: 0.3s ease-in-out;
+        background: #f8f8f8;
+        box-shadow: -10px 0 20px rgba(0, 0, 0, 0.05);
+        padding: 40px 0 0 30px;
+        transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
 
     #navlist.active {
@@ -109,11 +126,5 @@
 
     #mobile {
         display: block;
-    }
-
-    #mobile i {
-        font-size: 24px;
-        cursor: pointer;
-        padding: 0 40px;
     }
 }
