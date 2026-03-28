@@ -65,7 +65,7 @@ const casaCard = (data) => {
             </p>
           </div>
 
-          {/* Iconos - Se mantienen los 6 originales */}
+          {/* Iconos */}
           <div className="card-specs">
             <div className="spec-item">
               <i className="fa-solid fa-ruler-vertical"></i>

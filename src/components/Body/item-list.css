@@ -24,7 +24,7 @@
 /* Sección Imagen */
 .card-image-container {
     position: relative;
-    flex: 0 0 350px; /* Ancho fijo para la imagen en desktop */
+    flex: 0 0 350px;
     overflow: hidden;
 }
 
@@ -40,9 +40,9 @@
 }
 
 /* Badge de Venta/Alquiler */
-/* Badge de Venta/Alquiler ajustado para el cuerpo */
+
 .operation-badge {
-    display: inline-block; /* Para que solo ocupe el ancho del texto */
+    display: inline-block;
     width: fit-content;
     background: #008485;
     color: white;
@@ -52,8 +52,7 @@
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 0.8rem; /* Espacio con el precio */
-    /* Eliminamos position, top, left y box-shadow si quieres que se vea más limpio */
+    margin-bottom: 0.8rem;
 }
 
 /* Cuerpo de la Card */
@@ -89,7 +88,7 @@
     gap: 5px;
 }
 
-/* Grid de Iconos (Los 6 que pediste) */
+/* Grid de Iconos */
 .card-specs {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -140,11 +139,10 @@
 @media (max-width: 900px) {
     .modern-card {
         flex-direction: column;
-        border-radius: 15px; /* Bordes un poco más finos en móvil */
+        border-radius: 15px;
     }
 
     .card-body {
-        /* Reducimos el padding interno que es lo que más espacio roba */
         padding: 1rem; 
         gap: 8px;
     }
@@ -156,7 +154,7 @@
     }
 
     .card-price {
-        font-size: 1.2rem; /* Precio un poco más pequeño */
+        font-size: 1.2rem;
         margin-bottom: 2px;
     }
 
@@ -170,8 +168,6 @@
         margin-bottom: 0.8rem;
     }
 
-    /* Hacemos que los iconos ocupen 3 columnas incluso en móvil 
-       pero con texto más pequeño para ahorrar filas */
     .card-specs {
         grid-template-columns: repeat(3, 1fr); 
         gap: 0.5rem;
@@ -192,7 +188,7 @@
     }
 
     .details-btn {
-        width: 100%; /* El botón a lo ancho es más fácil de tocar en móvil */
+        width: 100%;
         text-align: center;
         padding: 8px;
         font-size: 0.9rem;
