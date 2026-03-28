@@ -4,6 +4,10 @@
     margin-left: 9%;
 }
 
+.filter__widget {
+    padding: 10px 0;
+}
+
 .filter__widget select {
     margin: 0 25px;
     padding: 10px 20px;

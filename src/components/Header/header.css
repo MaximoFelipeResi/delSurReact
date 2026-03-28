@@ -118,6 +118,7 @@
 
     #navlist.active {
         right: 0px;
+        margin-top: 25px;
     }
 
     #navlist li {

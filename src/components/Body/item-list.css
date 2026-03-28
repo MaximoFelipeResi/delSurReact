@@ -1,151 +1,200 @@
-.properties-container {
-    width: 80%;
-    margin: 3.6rem auto;
+/* Contenedor externo */
+.card-wrapper {
+    width: 90%;
+    max-width: 1250px;
+    margin: 2rem auto;
 }
 
-.rectangle-card {
+/* Card Principal */
+.modern-card {
     display: flex;
-    background-color: #fff;
-    border-radius: 18px;
-    box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.28);
-}
-
-.rectangle-img {
-    height: auto;
+    background: #ffffff;
+    border-radius: 20px;
     overflow: hidden;
-    
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0f0f0;
 }
 
-.rectangle-img img {
+.modern-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Sección Imagen */
+.card-image-container {
+    position: relative;
+    flex: 0 0 350px; /* Ancho fijo para la imagen en desktop */
+    overflow: hidden;
+}
+
+.card-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    transition: scale 0.5s ease;
 }
 
-.rectangle-content {
-    padding: 2rem;
+.modern-card:hover .card-img {
+    scale: 1.05;
 }
 
-.rectangle-details,
-.icon-text {
+/* Badge de Venta/Alquiler */
+/* Badge de Venta/Alquiler ajustado para el cuerpo */
+.operation-badge {
+    display: inline-block; /* Para que solo ocupe el ancho del texto */
+    width: fit-content;
+    background: #008485;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.8rem; /* Espacio con el precio */
+    /* Eliminamos position, top, left y box-shadow si quieres que se vea más limpio */
+}
+
+/* Cuerpo de la Card */
+.card-body {
+    flex: 1;
+    padding: 1.5rem 2rem;
     display: flex;
-    align-items: center;
-}
-
-.icon-text {
-    margin-right: 2rem;
-}
-
-.icon-text .icon {
-    color: #0a1d37;
-    margin-right: 0.4rem;
-}
-
-.rectangle-title {
-    display: flex;
-    justify-content: flex-start;
-}
-
-.rectangle-state {
-    margin: 25px 10px;
-    background-color: #008485;   
-    color: #fff;
-    font-weight: 500;
-    padding: .2rem .5rem;
-    border-radius: 4px;
-}
-
-.rectangle-main {
-    font-weight: bold;
-    margin: 1.4rem 5rem 1.4rem 0;
-    display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
 }
 
-.rectangle-btn {
-    margin: 1rem 0;
-    padding: .9rem 1.8rem;
-    display: inline-block;
-    background-color: #123456;
-    color: #fff;
+.card-price {
+    color: #00851f;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0 0 0.5rem 0;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
     font-weight: 700;
-    border-radius: 0.6rem;
-    transition: all 0.2s ease-in;
+    text-transform: capitalize;
 }
 
-.rectangle-btn:hover {
-    background-color: #2E77C7;
-}
-
-.filtrosContainer {
+.card-address {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    gap: 5px;
 }
 
-
-@media only screen and (max-width: 1080px) {
-    .rectangle-content {
-        padding: 1.4rem;
-        font-size: normal;
-    }
-
-    .rectangle-state {
-        padding: .5rem .5rem;
-    }
-
-    .icon-text {
-        margin-right: 1rem;
-    }
-
-    .icon-text .icon {
-        margin-right: 0.6rem;
-    }
+/* Grid de Iconos (Los 6 que pediste) */
+.card-specs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1.2rem 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
 }
 
-@media only screen and (max-width: 900px ) {
-    .rectangle-card {
-        display: flex;
+.spec-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #444;
+    font-size: 0.85rem;
+}
+
+.spec-item i {
+    color: #0a1d37;
+    font-size: 1rem;
+}
+
+/* Botón de Acción */
+.card-footer {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.details-btn {
+    background: #123456;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.details-btn:hover {
+    background: #008485;
+    transform: translateX(3px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .modern-card {
         flex-direction: column;
-        height: auto;
-        overflow: hidden;
+        border-radius: 15px; /* Bordes un poco más finos en móvil */
     }
 
-    .rectangle-img {
-        width: 100%;
-        height: auto;
-        flex: 1;
+    .card-body {
+        /* Reducimos el padding interno que es lo que más espacio roba */
+        padding: 1rem; 
+        gap: 8px;
     }
 
-    .rectangle-content {
-        flex: 2;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        font-size: small;
-        padding: 1.2rem;
+    .operation-badge {
+        font-size: 0.65rem;
+        padding: 3px 10px;
+        margin-bottom: 0.4rem;
     }
 
-    .icon-text {
-        margin-right: .9rem;
+    .card-price {
+        font-size: 1.2rem; /* Precio un poco más pequeño */
+        margin-bottom: 2px;
     }
 
-    .icon-text .icon {
-        margin-right: 0.3rem;
+    .card-title {
+        font-size: 1.1rem;
+        margin-bottom: 2px;
     }
 
-    .rectangle-state {
-        margin: 37px 10px 37px 0;
-        padding: .2rem .5rem;
-        border-radius: 4px;
+    .card-address {
+        font-size: 0.8rem;
+        margin-bottom: 0.8rem;
     }
 
-    .rectangle-main {
-        font-weight: bold;
-        margin: 1rem 1rem 1rem 0;
-        display: flex;
-        justify-content: none;
-        align-items: center;
+    /* Hacemos que los iconos ocupen 3 columnas incluso en móvil 
+       pero con texto más pequeño para ahorrar filas */
+    .card-specs {
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 0.5rem;
+        padding: 0.8rem 0;
+    }
+
+    .spec-item {
+        font-size: 0.75rem;
+        gap: 5px;
+    }
+
+    .spec-item i {
+        font-size: 0.85rem;
+    }
+
+    .card-footer {
+        margin-top: 0.8rem;
+    }
+
+    .details-btn {
+        width: 100%; /* El botón a lo ancho es más fácil de tocar en móvil */
+        text-align: center;
+        padding: 8px;
+        font-size: 0.9rem;
     }
 }

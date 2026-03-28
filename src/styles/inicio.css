@@ -65,20 +65,65 @@ article.card {
 }
 
 .card .footer-card {
-    padding: 0 1rem;
+    padding: .1rem .9rem;
 } 
 
+.arrow-icon {
+    transition: transform 0.3s ease;
+}
+
+.btn-watchmore:hover .arrow-icon {
+    transform: translateX(5px); /* La flecha se desplaza a la derecha */
+}
+
 .btn-watchmore {
-    margin: 10px;
-    background: black;
+    margin: 20px 0; /* Un poco más de aire */
+    background: #000; /* Fondo base */
+    color: #fff;
     cursor: pointer;
     border: none;
-    padding: 8px 16px;
-    color: azure;
-    font-size: 16px;
-    font-weight: bold;    
+    padding: 10px 18px;
+    font-size: 14px; /* Un poco más pequeño suele verse más elegante */
+    font-weight: 600;
+    border-radius: 50px; /* Bordes totalmente redondeados (Pill shape) */
     position: relative;
-    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1); /* Animación suave */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Efecto Hover (Al pasar el mouse) */
+.btn-watchmore:hover {
+    background: #1a1a1a;
+    transform: translateY(-3px); /* Se eleva un poco */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25); /* Sombra más profunda */
+}
+
+/* Efecto Active (Al hacer clic) */
+.btn-watchmore:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* El toque "Premium": Un destello que recorre el botón */
+.btn-watchmore::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(30deg);
+    transition: all 0.6s;
+}
+
+.btn-watchmore:hover::after {
+    left: 120%;
 }
 
 .button-container {

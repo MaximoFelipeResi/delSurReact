@@ -41,84 +41,68 @@ const casaCard = (data) => {
   }
 
   return (
-    <div>
-      <div className="properties-container">
-        <div className="rectangle-card">
-          <div className="rectangle-img" id="cardImage" >
-            <img
-              src={store.getState().apiArchivos + "/" + data?.data?.images?.[0]}
-              alt={data.data.titulo}
-              title={data.data.titulo}
-            />
+    <div className="card-wrapper">
+      <div className="modern-card">
+        {/* Imagen con Badge flotante */}
+        <div className="card-image-container">
+          <img
+            src={store.getState().apiArchivos + "/" + data?.data?.images?.[0]}
+            alt={data.data.titulo}
+            className="card-img"
+          />
+        </div>
+
+        {/* Contenido */}
+        <div className="card-body">
+          <div className="operation-badge">
+            {parseOperacion(data.data.operacion)}
+          </div>
+          <div className="card-header">
+            <h3 className="card-price">U$D {data.data.precio}</h3>
+            <h2 className="card-title">{data.data.titulo}</h2>
+            <p className="card-address">
+              <i className="fa-solid fa-location-dot"></i> {data.data.direccion}
+            </p>
           </div>
 
-          <div className="rectangle-content">
-            <div className="rectangle-details">
-              <div className="icon-text">
-                <span className="icon">
-                  <i className="fa-solid fa-ruler-vertical"></i>
-                </span>
-                <span className="text"> {data.data.m2} m²</span>
-              </div>
-
-              <div className="icon-text">
-                <span className="icon">
-                  <i className="fa-solid fa-ruler-combined"></i>
-                </span>
-                <span className="text"> {data.data.totalm2} m²</span>
-              </div>
-
-              <div className="icon-text">
-                <span className="icon">
-                  <i className="fa-solid fa-door-open"></i>
-                </span>
-                <span className="text"> {data.data.ambientes}</span>
-              </div>
-
-              <div className="icon-text">
-                <span className="icon">
-                  <i className="fa-solid fa-bed"></i>
-                </span>
-                <span className="text"> {data.data.dormitorios}</span>
-              </div>
-
-              <div className="icon-text">
-                <span className="icon">
-                  <i className="fa-solid fa-bath"></i>
-                </span>
-                <span className="text"> {data.data.banios}</span>
-              </div>
-
-              <div className="icon-text">
-                <span className="icon">
-                  <i className="fa-solid fa-warehouse"></i>
-                </span>
-                <span className="text"> {data.data.garage}</span>
-              </div>
+          {/* Iconos - Se mantienen los 6 originales */}
+          <div className="card-specs">
+            <div className="spec-item">
+              <i className="fa-solid fa-ruler-vertical"></i>
+              <span>{data.data.m2}m²</span>
             </div>
-
-            <div className="rectangle-title">
-              <div className="rectangle-state">
-                <span>{parseOperacion(data.data.operacion)}</span>
-              </div>
-
-              <h3 className="rectangle-main">{data.data.titulo}</h3>
-
-              <h3 className="rectangle-main">U$D {data.data.precio}</h3>
+            <div className="spec-item">
+              <i className="fa-solid fa-ruler-combined"></i>
+              <span>{data.data.totalm2}m²</span>
             </div>
-
-            <p className="excerpt">{data.data.direccion} </p>
-
-            <div className="rectangle-btn button">
-              <a title="Ver más detalles de la propiedad"
-                onClick={() => {
-                  store.dispatch(setCasa(data.data));
-                  location.href = "itemdetail";
-                }}
-              >
-                Más detalles
-              </a>
+            <div className="spec-item">
+              <i className="fa-solid fa-door-open"></i>
+              <span>{data.data.ambientes}</span>
             </div>
+            <div className="spec-item">
+              <i className="fa-solid fa-bed"></i>
+              <span>{data.data.dormitorios}</span>
+            </div>
+            <div className="spec-item">
+              <i className="fa-solid fa-bath"></i>
+              <span>{data.data.banios}</span>
+            </div>
+            <div className="spec-item">
+              <i className="fa-solid fa-warehouse"></i>
+              <span>{data.data.garage}</span>
+            </div>
+          </div>
+
+          <div className="card-footer">
+            <button 
+              className="details-btn"
+              onClick={() => {
+                store.dispatch(setCasa(data.data));
+                window.location.href = "itemdetail";
+              }}
+            >
+              Ver Propiedad
+            </button>
           </div>
         </div>
       </div>
